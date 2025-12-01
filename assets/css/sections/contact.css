@@ -424,7 +424,6 @@ body:not(.home) .contact-form-section::before {
   pointer-events: none;
 }
 .kontakt-info .contact-summary p {
-.kontakt-info .contact-summary p {
   color: rgba(255, 255, 255, 0.9);
   margin: 6px 0;
 }
