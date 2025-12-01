@@ -18,6 +18,16 @@
         $by            = $kontakt['by'] ?? '';
         $aabningstider = $kontakt['aabningstider'] ?? '';
         $cvr           = $kontakt['cvr'] ?? '';
+
+        // Build Google Maps link for address
+        $maps_address = '';
+        if ($adresse) {
+            $maps_address = $adresse;
+        }
+        if ($postnummer || $by) {
+            $maps_address .= ($maps_address ? ', ' : '') . trim((string)$postnummer . ' ' . (string)$by);
+        }
+        $maps_url = $maps_address ? 'https://www.google.com/maps/search/' . urlencode($maps_address) : '';
         ?>
 
         <div class="hodja-footer__col">
@@ -62,10 +72,26 @@
             <h3>Adresse</h3>
             <ul>
                 <?php if ($adresse): ?>
-                    <li><?php echo esc_html($adresse); ?></li>
+                    <li>
+                        <?php if ($maps_url): ?>
+                            <a href="<?php echo esc_url($maps_url); ?>" target="_blank" rel="noopener">
+                                <?php echo esc_html($adresse); ?>
+                            </a>
+                        <?php else: ?>
+                            <?php echo esc_html($adresse); ?>
+                        <?php endif; ?>
+                    </li>
                 <?php endif; ?>
                 <?php if ($postnummer && $by): ?>
-                    <li><?php echo esc_html($postnummer . ' ' . $by); ?></li>
+                    <li>
+                        <?php if ($maps_url): ?>
+                            <a href="<?php echo esc_url($maps_url); ?>" target="_blank" rel="noopener">
+                                <?php echo esc_html($postnummer . ' ' . $by); ?>
+                            </a>
+                        <?php else: ?>
+                            <?php echo esc_html($postnummer . ' ' . $by); ?>
+                        <?php endif; ?>
+                    </li>
                 <?php endif; ?>
             </ul>
         </div>
