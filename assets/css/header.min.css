@@ -1,0 +1,259 @@
+:root {
+  --header-h: 80px;
+  --hodja-red: #b00017;
+  --hodja-red-dark: #8a0012;
+  --border: rgba(0, 0, 0, 0.08);
+}
+
+/* Body offset */
+html {
+  scroll-padding-top: var(--header-h);
+}
+body {
+  padding-top: var(--header-h);
+  margin: 0;
+}
+
+/* ===== Header Base ===== */
+.hodja-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-h);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  transition: 0.3s ease;
+}
+.hodja-header.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Container */
+.hodja-header__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.hodja-header__logo {
+  display: flex;
+  align-items: center;
+  z-index: 30;
+  text-decoration: none;
+}
+.hodja-header__logo img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
+  transition: 0.3s;
+}
+.hodja-header__logo:hover img {
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+}
+
+/* Nav (desktop) */
+.hodja-header__nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.hodja-header__menu {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+.hodja-header__menu > li > a {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  border-radius: 8px;
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  transition: 0.25s ease;
+}
+.hodja-header__menu > li > a:hover,
+.hodja-header__menu > li > a.current-menu-item {
+  color: var(--hodja-red);
+  background: rgba(176, 0, 23, 0.06);
+}
+
+/* Dropdown */
+.hodja-header__menu .sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.25s ease;
+  min-width: 220px;
+}
+.hodja-header__menu li:hover > .sub-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.hodja-header__menu .sub-menu a {
+  display: block;
+  padding: 10px 18px;
+  color: #444;
+  font-size: 14px;
+  border-radius: 8px;
+}
+.hodja-header__menu .sub-menu a:hover {
+  background: rgba(176, 0, 23, 0.06);
+  color: var(--hodja-red);
+}
+
+/* CTA */
+.hodja-header__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--hodja-red);
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  box-shadow: 0 4px 18px rgba(176, 0, 23, 0.3);
+  transition: 0.3s ease;
+}
+.hodja-header__cta:hover {
+  background: var(--hodja-red-dark);
+  box-shadow: 0 6px 26px rgba(176, 0, 23, 0.4);
+  transform: translateY(-1px);
+}
+
+/* ===== Mobil ===== */
+.hodja-header__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  z-index: 40;
+}
+.hodja-header__toggle-bar {
+  width: 24px;
+  height: 2px;
+  background: #333;
+  transition: 0.3s;
+}
+
+@media (max-width: 1024px) {
+  .hodja-header__nav {
+    display: none;
+  }
+  .hodja-header__toggle {
+    display: flex;
+  }
+  .hodja-header.is-open .hodja-header__nav {
+    display: block;
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-top: 1px solid var(--border);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  }
+  .hodja-header__menu {
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 16px;
+    gap: 6px;
+  }
+  .hodja-header__menu > li > a {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  .hodja-header__menu .sub-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    box-shadow: none;
+    border: 0;
+    padding: 0;
+    margin: 4px 0 0 10px;
+  }
+  .hodja-header.is-open .hodja-header__toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .hodja-header.is-open .hodja-header__toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hodja-header.is-open .hodja-header__toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  .hodja-header__cta {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+/* Smaller screens */
+@media (max-width: 768px) {
+  .hodja-header__container {
+    padding: 0 16px;
+  }
+  .hodja-header__logo img {
+    height: 40px;
+  }
+  .hodja-header__cta {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
+/* HOTFIX: vis logoet uanset Oxygen */
+.hodja-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+.hodja-header__logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+}
+/* Fix: logo vises ikke */
+.hodja-header__logo img {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  height: 48px !important;
+  width: auto !important;
+  max-width: none !important;
+  filter: none !important;
+  position: relative !important;
+  z-index: 20 !important;
+}

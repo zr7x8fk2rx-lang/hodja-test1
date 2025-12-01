@@ -1,0 +1,203 @@
+/* =========================================
+	 HODJA FOOTER – Clean & Professional
+	 ========================================= */
+
+:root {
+  --hodja-red: #b00017;
+  --hodja-red-dark: #8a0012;
+  --hodja-beige: #f5ede3;
+  --text-dark: #222;
+  --text-light: #777;
+  --border: rgba(0, 0, 0, 0.08);
+}
+
+/* Footer base */
+.hodja-footer {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  padding: clamp(60px, 8vw, 100px) clamp(20px, 3vw, 40px) clamp(40px, 5vw, 60px);
+  font-size: 15px;
+  color: #e5e5e5;
+  position: relative;
+  z-index: 5;
+}
+
+.hodja-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    var(--hodja-red) 0%,
+    #d4001f 50%,
+    var(--hodja-red) 100%
+  );
+}
+
+/* Grid layout */
+.hodja-footer__container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: clamp(32px, 5vw, 72px);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Logo */
+.hodja-footer__logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1)
+    drop-shadow(0 2px 8px rgba(255, 255, 255, 0.1));
+}
+
+.hodja-footer__logo p {
+  color: #b8b8b8;
+  line-height: 1.6;
+  font-size: 15px;
+  max-width: 320px;
+}
+
+/* Columns */
+.hodja-footer__col h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.hodja-footer__col h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: var(--hodja-red);
+}
+
+.hodja-footer__col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hodja-footer__col li {
+  margin-bottom: 12px;
+  color: #b8b8b8;
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+}
+
+.hodja-footer__col a {
+  color: #e5e5e5;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.hodja-footer__col a:hover {
+  color: var(--hodja-red);
+}
+
+/* Brand accents: Kontakt + Åbningstider */
+.hodja-footer__container > .hodja-footer__col:nth-of-type(2) li {
+  color: var(--hodja-red);
+}
+.hodja-footer__container > .hodja-footer__col:nth-of-type(3) a {
+  color: var(--hodja-red);
+}
+.hodja-footer__container > .hodja-footer__col:nth-of-type(3) a:hover {
+  color: #fff;
+}
+
+/* Bottom bar */
+.hodja-footer__bottom {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 14px;
+  color: #888;
+}
+
+.hodja-footer__bottom p {
+  margin: 0;
+}
+
+.hodja-footer__social {
+  display: flex;
+  gap: 16px;
+}
+
+.hodja-footer__social a {
+  color: #e5e5e5;
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.hodja-footer__social a:hover {
+  background: var(--hodja-red);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .hodja-footer__container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hodja-footer__logo p {
+    max-width: 100%;
+  }
+
+  .hodja-footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .hodja-footer__bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Accessibility */
+.hodja-footer a:focus {
+  outline: 2px solid var(--hodja-red);
+  outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hodja-footer *,
+  .hodja-footer *::before,
+  .hodja-footer *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,1079 @@
+/* =========================================
+   FRONT-PAGE - Flydende & Professionelt Design
+========================================= */
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section transitions - fade in on scroll */
+.services-section,
+.usp-section {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Better spacing between sections */
+.services-section + .usp-section {
+  margin-top: clamp(-20px, -2vw, 0);
+}
+
+/* Smooth section dividers */
+.services-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(176, 0, 23, 0.1) 50%,
+    transparent 100%
+  );
+}
+
+/* ================================
+   HERO – CINEMATIC ORIGINAL (RED GLOW TOP)
+   Tilpasset til .home-hero markup
+   ================================ */
+
+/* Fokus på billedet */
+:root {
+  --hero-focal: center 38%;
+}
+
+/* HERO – foto, beige tone, vignette */
+.home-hero {
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  max-width: 1400px !important;
+  margin: 0 auto 96px !important;
+  padding: clamp(110px, 18vw, 190px) clamp(22px, 4vw, 68px) !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+  text-align: center !important;
+  min-height: auto !important;
+
+  border: 1px solid #d8cec4 !important;
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.18),
+    inset 0 2px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -10px 40px rgba(0, 0, 0, 0.06) !important;
+
+  background: radial-gradient(
+      700px 420px at 88% 6%,
+      rgba(255, 255, 255, 0.55),
+      rgba(255, 255, 255, 0) 65%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(246, 238, 230, 0.92)
+    ),
+    radial-gradient(
+      1200px 680px at 85% -12%,
+      rgba(176, 0, 23, 0.1),
+      transparent 60%
+    ),
+    url("https://hodjaauto.alwaysdata.net/wp-content/uploads/2025/11/forside.png") !important;
+  background-size: auto, auto, auto, cover !important;
+  background-position: center, center, 85% -10%, var(--hero-focal) !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll, scroll, scroll, fixed !important;
+}
+
+/* Filmisk korn/vignette */
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  background: repeating-linear-gradient(
+      125deg,
+      rgba(255, 255, 255, 0.05) 0 1px,
+      rgba(255, 255, 255, 0) 1px 18px
+    ),
+    radial-gradient(1200px 600px at 50% 0, rgba(0, 0, 0, 0.07), transparent 70%);
+  opacity: 0.22 !important;
+}
+
+/* ================================
+   RØD GLOW — TOP
+   ================================ */
+.home-hero::after {
+  content: "";
+  position: absolute;
+  left: -20%;
+  right: -20%;
+  top: -54px;
+  height: 96px !important;
+
+  background: linear-gradient(90deg, #b00017, #d62a3a, #b00017);
+  background-size: 220% 100% !important;
+  filter: blur(26px) saturate(1.08) !important;
+  opacity: 0.26 !important;
+
+  /* top-variant af clip-path */
+  clip-path: polygon(0 0, 100% 58%, 100% 100%, 0 100%) !important;
+
+  animation: hodjaLightSweep 13.5s linear infinite !important;
+}
+
+@keyframes hodjaLightSweep {
+  to {
+    background-position: 220% 0;
+  }
+}
+
+/* ================================
+   Scroll-reaktion (kun moderne browsere)
+   ================================ */
+@supports (animation-timeline: auto) {
+  .home-hero {
+    view-timeline-name: --hero;
+    view-timeline-axis: block;
+  }
+
+  .home-hero::after {
+    animation-name: hodjaLightSweep, hodjaParallax;
+    animation-duration: 13.5s, 1s;
+    animation-timing-function: linear, linear;
+    animation-iteration-count: infinite, 1;
+    animation-timeline: auto, --hero;
+    animation-range: normal, entry 0% exit 85%;
+  }
+
+  @keyframes hodjaParallax {
+    from {
+      transform: translateY(0);
+      opacity: 0.26;
+    }
+    to {
+      transform: translateY(20px);
+      opacity: 0.18;
+    }
+  }
+}
+
+/* ================================
+   Glasplade bag tekst (.home-herocontainer)
+   ================================ */
+.home-herocontainer {
+  position: relative;
+  max-width: 900px;
+  padding: clamp(18px, 3vw, 28px) clamp(18px, 3vw, 32px);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(6px) saturate(1.06);
+  border: 1px solid #d8cec4 !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45) !important;
+  text-align: center !important;
+}
+
+.home-herocontainer::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 10px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+/* ================================
+   Typografi til herotitel og tekst
+   ================================ */
+
+/* Hero Title - Clean professional headline */
+.home-herotitle {
+  /* Typography - Modern geometric sans-serif */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter",
+    "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: clamp(32px, 6vw, 64px); /* Mobile: 32-44px, Desktop: 52-64px */
+  line-height: 1.05; /* Tight for premium compact look */
+  letter-spacing: -0.02em; /* -2% for modern geometric spacing */
+
+  /* Color - High contrast black on light background */
+  color: #000000 !important;
+
+  /* Spacing - Generous vertical rhythm */
+  margin: 0 0 20px;
+  padding: 0;
+
+  /* Layout */
+  text-align: left;
+  max-width: 900px;
+
+  /* Clean - No effects */
+  text-shadow: none;
+  position: relative;
+}
+
+/* Remove any pseudo-element effects */
+.home-herotitle::after {
+  content: none;
+  display: none;
+}
+
+/* Hero Subtitle - Supporting text */
+.home-herotext {
+  /* Typography - Medium weight for hierarchy */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: clamp(16px, 2.2vw, 20px); /* 16-20px responsive */
+  line-height: 1.4; /* Comfortable reading */
+  letter-spacing: 0;
+
+  /* Color - Slightly muted for hierarchy */
+  color: #333333 !important;
+
+  /* Spacing */
+  margin: 0 0 32px;
+
+  /* Layout */
+  text-align: left;
+  max-width: 700px;
+
+  /* Clean - No effects */
+  text-shadow: none;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .home-herotitle {
+    font-size: clamp(28px, 8vw, 40px); /* Optimized mobile range */
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin-bottom: 16px;
+  }
+
+  .home-herotext {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+}
+
+/* ================================
+   CTA knap (.home-herobutton)
+   ================================ */
+.home-herobutton {
+  display: inline-block;
+  padding: 16px 40px;
+  border-radius: 12px;
+  color: #fff !important;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.01em;
+  border: 1px solid #900014 !important;
+  background: linear-gradient(180deg, #e63b49 0%, #b00017 85%) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.38),
+    0 16px 42px rgba(176, 0, 23, 0.36) !important;
+  transition: transform 0.15s ease, box-shadow 0.25s ease, filter 0.25s ease !important;
+}
+
+.home-herobutton:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08) saturate(1.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42),
+    0 24px 60px rgba(176, 0, 23, 0.44) !important;
+}
+
+.home-herobutton:active {
+  transform: translateY(0);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 12px 28px rgba(176, 0, 23, 0.28) !important;
+}
+
+/* Mobil HERO */
+@media (max-width: 980px) {
+  .home-hero {
+    text-align: center !important;
+    padding: 100px 24px !important;
+    background-attachment: scroll, scroll, scroll, scroll !important;
+    background-position: center, center, 85% -10%, center 28% !important;
+  }
+  .home-herocontainer {
+    padding: 18px 20px !important;
+  }
+  .home-herotitle::after {
+    bottom: -6px !important;
+    opacity: 0.25 !important;
+  }
+}
+
+/* =========================================
+   Global layout & section spacing
+   ========================================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+/* Alternating section backgrounds for scannability */
+.home-hero {
+  background: #ffffff;
+  padding-top: 140px !important;
+  padding-bottom: 140px !important;
+}
+.usp-section {
+  background: #f7f7f7;
+}
+.services-section {
+  background: #ffffff;
+}
+.booking-cta {
+  background: #f7f7f7;
+}
+.contact-form-section {
+  background: #ffffff;
+}
+
+/* Ensure clear spacing under section headings */
+.services-heading,
+.contact-form-title {
+  margin-bottom: 40px;
+}
+
+/* =========================================
+   Hero CTA button – brand primary
+   ========================================= */
+.home-herobutton,
+.btn-primary {
+  display: inline-block;
+  padding: 16px 28px;
+  border-radius: 8px;
+  background: #b00017;
+  color: #ffffff !important;
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0;
+  border: 1px solid #8b0012;
+  transition: transform 0.2s ease, box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.home-herobutton:hover,
+.btn-primary:hover {
+  background: #8b0012;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   USP grid – responsive cards
+   ========================================= */
+.usp-section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.usp-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .usp-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .usp-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.usp-item {
+  background: #ffffff;
+  border: 1px solid #e5e0da;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.usp-icon {
+  width: 48px;
+  height: 48px;
+  font-size: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid rgba(176, 0, 23, 0.4);
+  color: #b00017;
+  margin-bottom: 12px;
+}
+
+.usp-item h3 {
+  font-size: 18px;
+  margin: 0 0 6px;
+}
+.usp-item p {
+  font-size: 16px;
+  margin: 0;
+  color: #333333;
+}
+
+/* =========================================
+   Services cards – responsive grid
+   ========================================= */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 1024px) {
+  .services-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.services-box {
+  background: #ffffff;
+  border: 1px solid #e5e0da;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.services-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+.services-title {
+  font-size: 20px;
+  margin: 0 0 8px;
+  color: #000;
+}
+.services-text {
+  font-size: 16px;
+  color: #333;
+  margin: 0 0 16px;
+}
+.services-cta {
+  margin-top: auto;
+  display: inline-block;
+  font-weight: 700;
+  color: #b00017;
+}
+
+/* =========================================
+   Booking CTA band
+   ========================================= */
+.booking-cta {
+  text-align: center;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+.booking-cta .btn-primary {
+  font-size: 18px;
+}
+
+/* =========================================
+   Contact grid – two columns on desktop
+   ========================================= */
+.contact-form-section {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+/* Contact Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-col-header {
+  margin-bottom: 24px;
+}
+
+/* Contact Form Wrapper */
+.contact-form-wrapper {
+  position: relative;
+  padding: 28px 24px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff, #f7f0e8);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.contact-form-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 18px;
+  width: 100px;
+  height: 25px;
+  background-image: url("https://hodjaauto.alwaysdata.net/wp-content/uploads/2025/12/streg.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+}
+
+/* Contact Info Wrapper */
+.contact-info-wrapper {
+  position: relative;
+  padding: 28px 24px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff, #f7f0e8);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.contact-info-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 18px;
+  width: 100px;
+  height: 25px;
+  background-image: url("https://hodjaauto.alwaysdata.net/wp-content/uploads/2025/12/streg.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+}
+
+/* Contact Cards */
+.contact-info-wrapper .contact-card {
+  background: #f9f9f9;
+  border: 1px solid #e5e0da;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+  transition: background 0.2s ease;
+}
+
+.contact-info-wrapper .contact-card:last-child {
+  margin-bottom: 0;
+}
+
+.contact-info-wrapper .contact-card:hover {
+  background: #f5f5f5;
+}
+
+.contact-info-wrapper .contact-card-header {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.contact-info-wrapper .contact-icon {
+  display: none;
+}
+
+.contact-info-wrapper .contact-card-title {
+  color: #b00017;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.contact-info-wrapper .contact-card-text {
+  color: #333333;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contact-info-wrapper .contact-card-link {
+  color: #b00017;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(176, 0, 23, 0.3);
+}
+
+.contact-info-wrapper .contact-card-link:hover {
+  color: #8b0012;
+  border-bottom-color: rgba(176, 0, 23, 0.5);
+}
+
+.contact-info-wrapper .contact-card--opening .contact-card-text {
+  color: #b00017;
+}
+
+/* =========================================
+   GLOBAL CINEMATIC SURFACE – GLAS-KORT
+   ========================================= */
+
+@supports (backdrop-filter: blur(4px)) {
+  .services-box,
+  .contact-form-wrapper {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(4px) saturate(1.05);
+    -webkit-backdrop-filter: blur(4px) saturate(1.05);
+  }
+}
+
+/* fallback hvis browser IKKE understøtter blur */
+@supports not (backdrop-filter: blur(4px)) {
+  .services-box,
+  .contact-form-wrapper {
+    background: #ffffff;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  }
+}
+
+/* =========================================
+   USP – CINEMATIC BADGES (små, 3D, rød glow + glans)
+   ========================================= */
+
+.usp-section {
+  max-width: 1200px;
+  margin: -32px auto 80px;
+  padding: 0 24px;
+  /* Fjern band-baggrund fra komponent-usp.css på forsiden */
+  background: transparent !important;
+}
+
+.usp-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 13px;
+  justify-content: center;
+}
+
+/* Slå mønster/overlay fra komponent-usp.css fra */
+.usp-section::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Pillen */
+.usp-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 10px;
+  align-items: center;
+
+  padding: 10px 18px;
+  min-width: 210px;
+  max-width: 260px;
+  border-radius: 999px;
+
+  /* Blød fade til forsidens beige baggrund – uden skarp kant */
+  background: radial-gradient(
+    ellipse at 50% 55%,
+    rgba(255, 255, 255, 0.38) 0%,
+    rgba(255, 255, 255, 0.22) 45%,
+    rgba(245, 237, 227, 0) 85%
+  );
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  overflow: hidden;
+  cursor: default;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Cinematic rød glow bag pillen - fjernet */
+.usp-item::before {
+  content: none;
+}
+
+/* Top-glans (tynd highlight) */
+.usp-item::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 4px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 999px;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* Ikon */
+.usp-icon {
+  grid-row: 1 / 3;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: radial-gradient(circle at 30% 20%, #ffffff, #f5e0e0);
+  border: 1px solid rgba(176, 0, 23, 0.45);
+  box-shadow: 0 4px 10px rgba(176, 0, 23, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+
+  color: #b00017;
+}
+
+/* Tekster i USP */
+.usp-item h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f1a17;
+}
+
+.usp-item p {
+  margin: 2px 0 0;
+  font-size: 13px;
+  color: #5f544c;
+}
+
+/* Mobil – én per række */
+@media (max-width: 768px) {
+  .usp-section {
+    margin: 16px auto 60px;
+    padding: 0 16px;
+  }
+
+  .usp-item {
+    min-width: 100%;
+  }
+}
+
+/* =========================================
+   SERVICES — CINEMATIC KORT (større søskende til USP)
+   ========================================= */
+
+.services-section {
+  max-width: 1400px;
+  margin: 0 auto 80px;
+  padding: 60px clamp(22px, 4vw, 40px);
+
+  position: relative;
+  background: radial-gradient(
+    ellipse 800px 400px at 50% 0%,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(247, 240, 232, 0.35) 100%
+  );
+  border-radius: 28px;
+
+  /* Subtil kant og skygge */
+  border: 1px solid rgba(216, 206, 196, 0.5);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.03),
+    inset 0 2px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(176, 0, 23, 0.04);
+}
+
+/* Subtil texture og glød */
+.services-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  pointer-events: none;
+  background: radial-gradient(
+      circle at 80% 20%,
+      rgba(176, 0, 23, 0.04) 0%,
+      transparent 50%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.008) 3px,
+      rgba(0, 0, 0, 0.008) 4px
+    );
+  opacity: 0.5;
+}
+
+.services-heading {
+  font-size: 36px;
+  font-weight: 900;
+  text-align: center;
+  margin: 0 0 48px;
+  letter-spacing: -0.04em;
+
+  background: linear-gradient(135deg, #1f1a17 0%, #b00017 50%, #1f1a17 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  position: relative;
+  text-shadow: none;
+}
+
+/* Subtil skygge bag teksten - fjernet */
+.services-heading::after {
+  content: none;
+}
+
+.services-section h2 {
+  font-size: 32px;
+  font-weight: 800;
+  text-align: left;
+  margin: 0 0 28px;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Service-kort – større "søskende" til USP-pillens look */
+.services-box {
+  padding: 26px 22px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff, #f7f0e8);
+  border: 1px solid var(--card-border);
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  position: relative;
+  transition: transform 0.18s ease, box-shadow 0.22s ease,
+    border-color 0.18s ease;
+  cursor: pointer;
+}
+
+/* Lille toplinje (samme vibe som USP highlight) */
+.services-box::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 16px;
+  width: 40px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--hodja-red), transparent);
+  opacity: 0.85;
+}
+
+/* Hover – cinematic løft */
+.services-box:hover {
+  transform: translateY(-4px);
+  border-color: var(--hodja-red);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(176, 0, 23, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.services-icon {
+  display: none;
+}
+
+.services-title {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.services-content {
+  margin-bottom: 16px;
+}
+
+.services-text {
+  margin: 0;
+  font-size: 15px;
+  color: var(--text-light);
+}
+
+.services-cta {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+/* =========================================
+   CONTACT – Matcher services styling
+   ========================================= */
+
+.contact-form-section {
+  max-width: 1400px;
+  margin: 0 auto 80px;
+  padding: 50px clamp(22px, 4vw, 40px);
+
+  position: relative;
+  background: radial-gradient(
+    ellipse 800px 400px at 50% 0%,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(247, 240, 232, 0.35) 100%
+  );
+  border-radius: 28px;
+
+  border: 1px solid rgba(216, 206, 196, 0.5);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.03),
+    inset 0 2px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(176, 0, 23, 0.04);
+}
+
+.contact-form-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  pointer-events: none;
+  background: radial-gradient(
+      circle at 80% 20%,
+      rgba(176, 0, 23, 0.04) 0%,
+      transparent 50%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.008) 3px,
+      rgba(0, 0, 0, 0.008) 4px
+    );
+  opacity: 0.5;
+}
+
+.contact-form-title {
+  font-size: 36px;
+  font-weight: 900;
+  text-align: center;
+  margin: 0 0 16px;
+  letter-spacing: -0.04em;
+
+  background: linear-gradient(135deg, #1f1a17 0%, #b00017 50%, #1f1a17 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  position: relative;
+  text-shadow: none;
+}
+
+.contact-form-title {
+  font-size: clamp(28px, 5vw, 38px);
+  font-weight: 800;
+  color: #1f1a17;
+  text-align: center;
+  margin: 0 0 16px;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #1f1a17 0%, #b00017 50%, #1f1a17 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  text-shadow: none;
+}
+
+.contact-form-subtitle {
+  margin: 0 0 32px;
+  font-size: 16px;
+  color: var(--text-light);
+  text-align: center;
+}
+
+/* Skjul formularens titel og beskrivelse */
+.contact-form-section .ff-el-header,
+.contact-form-section .ff-form-header,
+.contact-form-section .fluentform .ff_form_wrap .ff-el-form-top,
+.contact-form-section .ff-el-group > .ff-el-header {
+  display: none !important;
+}
+
+/* =========================================
+   RESPONSIVE FINPUDSNING
+   ========================================= */
+@media (max-width: 768px) {
+  .usp-section,
+  .services-section,
+  .contact-form-section {
+    margin-bottom: 60px;
+    padding: 24px 16px 0;
+  }
+
+  .contact-form-title {
+    font-size: 26px;
+  }
+
+  .services-box,
+  .contact-form-wrapper {
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  }
+
+  .contact-form-section {
+    padding: 0 16px;
+    margin: 30px auto 90px;
+  }
+
+  .contact-form-wrapper {
+    padding: 22px 18px 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .contact-form-wrapper::after {
+    bottom: -32px;
+    height: 52px;
+    filter: blur(18px);
+    opacity: 0.55;
+  }
+}
+
+/* Better focus states for accessibility */
+.services-cta:focus,
+.usp-item:focus-within {
+  outline: 3px solid rgba(176, 0, 23, 0.4);
+  outline-offset: 4px;
+}
+
+/* Improved responsive flow */
+@media (max-width: 992px) {
+  .services-section,
+  .usp-section {
+    padding-top: clamp(50px, 7vw, 80px);
+    padding-bottom: clamp(50px, 7vw, 80px);
+  }
+}
+
+@media (max-width: 640px) {
+  /* Tighter spacing on mobile for better flow */
+  .services-section + .usp-section {
+    margin-top: -10px;
+  }
+}

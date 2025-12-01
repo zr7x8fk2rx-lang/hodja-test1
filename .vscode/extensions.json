@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "zignd.html-css-class-completion",
+    "pranaygp.vscode-css-peek",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "Natizyskunk.sftp"
+    "github.copilot",
+    "vincaslt.highlight-matching-tag"
+  ]
+}

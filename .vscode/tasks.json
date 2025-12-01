@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Deploy & Flush",
+      "type": "shell",
+      "command": "curl -sS \"https://hodjaauto.alwaysdata.net/?hodja_flush=1&key=hodja-secret-123\" && echo '✅ Hodja cache ryddet!'",
+      "problemMatcher": []
+    }
+  ]
+}
+ 

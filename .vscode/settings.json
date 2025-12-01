@@ -1,0 +1,50 @@
+{
+  "workbench.editorAssociations": {
+    "*.bak": "default"
+  },
+  "workbench.colorCustomizations": {
+    "tab.activeBackground": "#B00017",
+    "tab.activeBorderTop": "#B00017",
+    "tab.unfocusedActiveBackground": "#8D8070"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "prettier.tabWidth": 2,
+  "prettier.useTabs": false,
+  "prettier.semi": true,
+  "prettier.singleQuote": false,
+  "prettier.bracketSpacing": true,
+
+  // Sprog-specifik formatter
+  "[php]": { "editor.defaultFormatter": "bmewburn.vscode-intelephense-client" },
+  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+
+  // Intelephense (PHP)
+  "intelephense.environment.phpVersion": "8.2",
+  "intelephense.diagnostics.undefinedFunctions": false,
+  "intelephense.diagnostics.undefinedConstants": false,
+  "php.validate.enable": false,
+
+  "path-intellisense.mappings": {
+    "/assets": "${workspaceFolder}/wp-content/themes/hodja-test1/assets"
+  },
+  "path-intellisense.autoSlashAfterDirectory": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+
+  // Zignd – IntelliSense for CSS class names in HTML
+  "html-css-class-completion.includeGlobPattern": "assets/css/**/*.{css,scss}",
+  "html-css-class-completion.excludeGlobPattern": "**/{node_modules,wp-content/uploads,.git,dist,build}/**",
+
+  // Formattere m.m.
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.git": true,
+    "**/wp-content/uploads": true
+  }
+}

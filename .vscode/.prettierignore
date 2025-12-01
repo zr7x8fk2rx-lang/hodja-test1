@@ -1,0 +1,46 @@
+# =====================================
+# 🧹 Hodja Auto – Prettier Ignore Rules
+# =====================================
+
+# WordPress core
+wp-admin/
+wp-includes/
+
+# Plugins & themes (uden for dit aktive tema)
+wp-content/plugins/
+!wp-content/themes/hodja-test1/
+
+# Oxygen / Breakdance / cache / backup
+wp-content/cache/
+wp-content/uploads/oxygen/
+wp-content/uploads/breakdance/
+wp-content/uploads/wpo-minify/
+wp-content/uploads/updraft/
+wp-content/uploads/backups/
+
+# Minified og build-filer
+*.min.css
+*.min.js
+*.min.map
+
+# System / build / tooling
+node_modules/
+vendor/
+.env
+.DS_Store
+Thumbs.db
+*.log
+
+# Midlertidige og macOS filer
+.nfs*
+.idea/
+.vscode/
+.sftp.json
+
+# Exclude backups og exports
+*.zip
+*.sql
+*.bak
+*.json
+*.tar
+*.gz

@@ -1,0 +1,202 @@
+.policy {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 48px) clamp(16px, 3vw, 28px);
+  background: var(--bg);
+}
+.policy-hero {
+  position: relative;
+  margin-bottom: clamp(20px, 3vw, 32px);
+  padding: clamp(18px, 2.5vw, 28px);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(6px) saturate(1.06);
+  border: 1px solid #d8cec4;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45);
+  overflow: hidden;
+}
+.policy-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  background: repeating-linear-gradient(
+      125deg,
+      rgba(255, 255, 255, 0.05) 0 1px,
+      rgba(255, 255, 255, 0) 1px 18px
+    ),
+    radial-gradient(1200px 600px at 50% 0, rgba(0, 0, 0, 0.07), transparent 70%);
+  opacity: 0.18;
+  z-index: 0;
+}
+.policy-hero::after {
+  content: "";
+  position: absolute;
+  left: -20%;
+  right: -20%;
+  top: -46px;
+  height: 84px;
+  background: linear-gradient(90deg, #b00017, #d62a3a, #b00017);
+  background-size: 220% 100%;
+  filter: blur(22px) saturate(1.05);
+  opacity: 0.22;
+  clip-path: polygon(0 0, 100% 58%, 100% 100%, 0 100%);
+  z-index: 0;
+}
+.policy-hero h1 {
+  margin: 0 0 8px;
+  font-size: clamp(1.8rem, 4vw, 2.2rem);
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.72), 0 2px 2px rgba(0, 0, 0, 0.08);
+}
+.policy-hero .updated {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.policy h2 {
+  margin: clamp(22px, 4vw, 30px) 0 10px;
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.25;
+  position: relative;
+}
+.policy h2::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, var(--hodja-red), var(--hodja-red-dark));
+  border-radius: 2px;
+}
+.policy h3 {
+  margin: 16px 0 8px;
+  font-size: clamp(1.05rem, 2.2vw, 1.2rem);
+  font-weight: 700;
+  color: var(--text);
+}
+.policy p {
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 1rem;
+  margin: 0 0 14px;
+}
+.policy ul,
+.policy ol {
+  padding-left: 1.2em;
+  margin: 0 0 14px;
+}
+.policy li {
+  margin: 6px 0;
+  line-height: 1.7;
+}
+.policy ul li::marker {
+  color: var(--hodja-red);
+}
+.policy a {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 2px solid rgba(176, 0, 23, 0.25);
+  transition: border-color 0.2s, color 0.2s;
+}
+.policy a:hover {
+  color: var(--hodja-red);
+  border-bottom-color: var(--hodja-red);
+}
+.policy .note,
+.policy .legal,
+.policy .warning {
+  padding: 14px 16px;
+  border-radius: 12px;
+  margin: 14px 0;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+}
+.policy .warning {
+  background: #fff7f7;
+  border-color: rgba(176, 0, 23, 0.25);
+}
+.policy .note strong,
+.policy .legal strong,
+.policy .warning strong {
+  color: var(--hodja-red);
+}
+.policy table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+.policy thead th {
+  background: linear-gradient(
+    135deg,
+    rgba(176, 0, 23, 0.04),
+    rgba(139, 0, 18, 0.06)
+  );
+  font-weight: 700;
+}
+.policy th,
+.policy td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  color: var(--text);
+}
+.policy tr:last-child td {
+  border-bottom: none;
+}
+.policy-toc {
+  margin: 14px 0 22px;
+  padding: 14px 16px;
+  background: #fffdfd;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+}
+.policy-toc .toc-title {
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.policy-toc a {
+  border-bottom: 1px solid rgba(176, 0, 23, 0.25);
+}
+.policy-toc a:hover {
+  color: var(--hodja-red);
+  border-bottom-color: var(--hodja-red);
+}
+.policy .cta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.policy .muted {
+  color: var(--muted);
+}
+.policy hr {
+  height: 1px;
+  border: none;
+  background: rgba(0, 0, 0, 0.08);
+  margin: 18px 0;
+}
+@media (max-width: 768px) {
+  .policy {
+    padding: 20px 14px;
+  }
+  .policy-hero {
+    padding: 16px;
+  }
+  .policy h2::after {
+    width: 48px;
+  }
+}

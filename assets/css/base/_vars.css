@@ -1,0 +1,78 @@
+:root {
+  /* Primære Hodja røde farver */
+  --hodja-red: #b00017;
+  --hodja-red-dark: #8b0012;
+  --hodja-red-darker: #6b000e;
+  --hodja-red-light: #d62a3a;
+  --hodja-red-glow: rgba(176, 0, 23, 0.25);
+
+  /* Tekst farver – varme, filmiske toner */
+  --text: #1f1a17;
+  --text-secondary: #2b2522;
+  --text-muted: #5f544c;
+  --text-light: #6a5e55;
+
+  /* Baggrunde – beige cinematic palette */
+  --bg: #f5ede3;
+  --bg-soft: #f6eee6;
+  --bg-warm: #f7f0e8;
+  --bg-gradient-start: rgba(255, 255, 255, 0.96);
+  --bg-gradient-end: rgba(246, 238, 230, 0.92);
+
+  /* Kort & glaseffekter */
+  --card: rgba(255, 255, 255, 0.82);
+  --card-solid: #ffffff;
+  --card-glass: rgba(255, 255, 255, 0.62);
+  --card-border: #d8cec4;
+  --card-border-light: #e0d8d0;
+
+  /* Kantlinjer */
+  --border: #d8cec4;
+  --border-subtle: rgba(176, 0, 23, 0.12);
+  --border-focus: rgba(176, 0, 23, 0.45);
+
+  /* Skygger – subtile, cinematic */
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-medium: 0 10px 28px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 14px 40px rgba(0, 0, 0, 0.12);
+  --shadow-red: 0 16px 42px rgba(176, 0, 23, 0.36);
+  --shadow-red-hover: 0 24px 60px rgba(176, 0, 23, 0.44);
+
+  /* Inset highlights – glaseffekter */
+  --inset-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  --inset-highlight-strong: inset 0 2px 0 rgba(255, 255, 255, 0.55);
+}
+
+@keyframes heroPattern {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(60px, 60px);
+  }
+}
+@keyframes services-underline {
+  to {
+    width: clamp(45px, 10vw, 75px);
+  }
+}
+@keyframes services-fade-in {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Global minor fix */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
