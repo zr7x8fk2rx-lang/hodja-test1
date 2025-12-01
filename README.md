@@ -34,7 +34,7 @@ style.css            – Tema metadata (påkrævet af WordPress)
 │ └── servicepage.css – Service undersider
 │
 ├── forms/
-│ └── fluentform.css – Fluent Forms styling
+│ └── ff-form.css – Fluent Forms styling (scoped til .ff-form-wrapper)
 │
 
 ├── global.css – Base styling, reset, typografi
@@ -197,8 +197,8 @@ page-tak-for-booking.php          – Tak for booking
 ### Partials (templates/partials/)
 
 ```
-acf-contact-info.php              – ACF kontaktoplysninger shortcode
-contact-form.php                  – Kontaktformular
+acf-info.php                      – ACF kontaktoplysninger partial
+ff-form.php                       – Fluent Forms partial (kontaktformular)
 ```
 
 ---

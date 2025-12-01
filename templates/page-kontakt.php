@@ -34,8 +34,8 @@ get_header(); ?>
                     <p class="contact-form-subtitle">Har du spørgsmål eller brug for hjælp? Skriv til os – vi vender hurtigt tilbage.</p>
 
                     <?php
-                    // Include contact form partial
-                    get_template_part('templates/partials/contact-form');
+                    // Include Fluent Form partial
+                    get_template_part('templates/partials/ff-form');
                     ?>
                 </div>
 

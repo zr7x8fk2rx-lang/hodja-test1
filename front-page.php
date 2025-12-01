@@ -149,7 +149,7 @@ get_header(); ?>
                         <p class="contact-form-subtitle">Find os her – <br>vi er klar til at hjælpe dig.</p>
                     </div>
                     <div class="acf-info-wrapper">
-                        <?php get_template_part('templates/partials/acf-contact-info'); ?>
+                        <?php get_template_part('templates/partials/acf-info'); ?>
                     </div>
                 </div>
             </div>

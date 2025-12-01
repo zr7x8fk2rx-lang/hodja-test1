@@ -165,13 +165,13 @@ add_action('wp_enqueue_scripts', function () {
             );
         }
 
-        $fluentform_css = $theme_dir . '/assets/css/forms/fluentform.css';
-        if (file_exists($fluentform_css)) {
+        $ff_form_css = $theme_dir . '/assets/css/forms/ff-form.css';
+        if (file_exists($ff_form_css)) {
             wp_enqueue_style(
-                'hodja-fluentform',
-                $theme_uri . '/assets/css/forms/fluentform.css',
+                'hodja-ff-form',
+                $theme_uri . '/assets/css/forms/ff-form.css',
                 ['hodja-global'],
-                filemtime($fluentform_css)
+                filemtime($ff_form_css)
             );
         }
     }
@@ -245,13 +245,13 @@ add_action('wp_enqueue_scripts', function () {
         }
 
         // Fluent Forms CSS (alle formularer)
-        $fluentform_css = $theme_dir . '/assets/css/forms/fluentform.css';
-        if (file_exists($fluentform_css)) {
+        $ff_form_css = $theme_dir . '/assets/css/forms/ff-form.css';
+        if (file_exists($ff_form_css)) {
             wp_enqueue_style(
-                'hodja-fluentform',
-                $theme_uri . '/assets/css/forms/fluentform.css',
+                'hodja-ff-form',
+                $theme_uri . '/assets/css/forms/ff-form.css',
                 ['hodja-global'],
-                filemtime($fluentform_css)
+                filemtime($ff_form_css)
             );
         }
     }
@@ -423,6 +423,6 @@ add_shortcode('hodja_contact_info', function ($atts) {
     $hodja_hide_email = ($atts['hide_email'] === 'true');
 
     ob_start();
-    get_template_part('templates/partials/acf-contact-info');
+    get_template_part('templates/partials/acf-info');
     return ob_get_clean();
 });
