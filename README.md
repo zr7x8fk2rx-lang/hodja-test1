@@ -129,15 +129,35 @@ background: #b00017;
 - Commit ændringer
 
 ### Build Tools (Valgfrit)
-Installer PostCSS for autoprefixing og minificering:
 
+**Forudsætning:** Node.js skal være installeret.
+
+Install Node.js (hvis ikke allerede installeret):
 ```bash
-npm install -D postcss postcss-cli autoprefixer cssnano
+# Via Homebrew (macOS)
+brew install node
+
+# Eller download fra https://nodejs.org/
 ```
 
-Build kommando:
+Installer PostCSS dependencies:
 ```bash
-npx postcss assets/css/global.css -o dist/global.min.css -u autoprefixer cssnano
+npm install
+```
+
+Build kommandoer:
+```bash
+# Build alle CSS filer
+npm run build
+
+# Build kun global.css
+npm run build:global
+
+# Watch mode (auto-rebuild ved ændringer)
+npm run build:watch
+
+# Tilføj vendor prefixes
+npm run prefix
 ```
 
 ---
