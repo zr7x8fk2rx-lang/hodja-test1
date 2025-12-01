@@ -46,7 +46,7 @@ body:not(.home) .contact-form-section::before {
 .contact-form-title {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 800;
-  color: #1f1a17;
+  color: var(--text);
   margin-bottom: 16px;
   line-height: 1.1;
   text-shadow: none;
@@ -54,7 +54,7 @@ body:not(.home) .contact-form-section::before {
 
 .contact-form-subtitle {
   font-size: clamp(1.0625rem, 2.2vw, 1.25rem);
-  color: #6a5e55;
+  color: var(--text-light);
   margin-bottom: 48px;
   line-height: 1.6;
   max-width: 600px;
@@ -371,31 +371,22 @@ body:not(.home) .contact-form-section::before {
   display: flex;
   flex-direction: column;
 }
-.kontakt-info {
-  display: flex;
-  flex-direction: column;
-}
-/* Skub kun den røde boks ned, behold tekst øverst */
-.kontakt-info-box {
-  margin-top: clamp(20px, 3vw, 32px); /* Fintuning for at matche hvid boks */
-}
+/* Kontakt side layout */
+.kontakt-info { display: flex; flex-direction: column; }
 .kontakt-form .contact-form-subtitle {
   text-align: left;
   margin: 0 0 clamp(16px, 2vw, 24px);
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
 }
 .kontakt-info .contact-form-subtitle {
   text-align: left;
   margin: 0 0 clamp(16px, 2vw, 24px);
-  color: rgba(255,255,255,0.85);
+  color: rgba(255, 255, 255, 0.85);
 }
-.kontakt-info {
-  display: flex;
-  flex-direction: column;
-}
+/* Info boks – samlet styling (inkl. tidligere margin-top) */
 .kontakt-info-box {
-  /* En kapsel med samme stemning som contact-section */
   position: relative;
+  margin-top: clamp(20px, 3vw, 32px);
   background: linear-gradient(
     135deg,
     rgba(176, 0, 23, 0.9) 0%,
@@ -406,8 +397,7 @@ body:not(.home) .contact-form-section::before {
   border-radius: clamp(16px, 2vw, 24px);
   padding: clamp(24px, 3vw, 36px);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .kontakt-info-box::before {
