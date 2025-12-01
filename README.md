@@ -25,22 +25,23 @@ style.css            – Tema metadata (påkrævet af WordPress)
 
 │
 ├── sections/
-│   └── contact.css         – Kontaktsektion (både forside og kontakt side)
+│ └── contact.css – Kontaktsektion (både forside og kontakt side)
 │
 ├── pages/
-│   ├── 404.css             – 404 fejlside styling
-│   ├── front-page.css      – Forside-specifikke overrides og layout
-│   ├── policy.css          – Politik sider
-│   └── servicepage.css     – Service undersider
+│ ├── 404.css – 404 fejlside styling
+│ ├── front-page.css – Forside-specifikke overrides og layout
+│ ├── policy.css – Politik sider
+│ └── servicepage.css – Service undersider
 │
 ├── forms/
-│   └── fluentform.css      – Fluent Forms styling
+│ └── fluentform.css – Fluent Forms styling
 │
 
-├── global.css              – Base styling, reset, typografi
-├── header.min.css          – Header/navigation styling
-└── footer.min.css          – Footer styling
-```
+├── global.css – Base styling, reset, typografi
+├── header.min.css – Header/navigation styling
+└── footer.min.css – Footer styling
+
+````
 
 ---
 
@@ -60,16 +61,18 @@ Følg denne rækkefølge:
   ```css
   /* ✅ Godt - generisk komponent */
   .hero { ... }
-  
+
   /* ✅ Godt - forside variant */
   body.home .hero { ... }
-  
+
   /* ❌ Undgå - blander concerns */
   .home-hero { ... }
-  ```
+````
 
 ### 3. **CSS Custom Properties**
+
 Brug altid variabler fra `_vars.css`:
+
 ```css
 /* ✅ Godt */
 color: var(--text);
@@ -81,11 +84,13 @@ background: #b00017;
 ```
 
 ### 4. **Naming Convention**
+
 - Brug **semantiske navne**: `.hero`, `.contact-card`, `.services-grid`
 - Brug **BEM** kun ved komplekse komponenter: `.card__header`, `.card--featured`
 - Brug **modifiers** med `--`: `.button--primary`, `.hero--compact`
 
 ### 5. **Responsive Design**
+
 - Brug `clamp()` for fluid sizing hvor muligt
 - Media queries kun når nødvendigt
 - Mobile-first approach (base styles = mobile, media queries = desktop)
@@ -95,6 +100,7 @@ background: #b00017;
 ## 🔧 Hvordan Tilføjer Jeg...
 
 ### En Ny Komponent
+
 1. Opret fil i `assets/css/components/[navn].css`
 2. Skriv generisk, genbrugelig styling
 3. Enqueue i `functions.php`:
@@ -106,6 +112,7 @@ background: #b00017;
    ```
 
 ### En Ny Side Template
+
 1. Opret `templates/page-[slug].php`
 2. Hvis behov for specifik styling, opret `assets/css/pages/[slug].css`
 3. Enqueue i `functions.php` med side-check:
@@ -116,6 +123,7 @@ background: #b00017;
    ```
 
 ### Tilpas Forside Layout
+
 - **Generel styling**: Tilføj i relevante komponent-filer
 - **Forside-specifikt**: Tilføj til `front-page.css` med `body.home` scope
 
@@ -124,6 +132,7 @@ background: #b00017;
 ## 🛠️ Development Workflow
 
 ### Quick Edits
+
 - Rediger CSS direkte
 - Test i browser
 - Commit ændringer
@@ -133,6 +142,7 @@ background: #b00017;
 **Forudsætning:** Node.js skal være installeret.
 
 Install Node.js (hvis ikke allerede installeret):
+
 ```bash
 # Via Homebrew (macOS)
 brew install node
@@ -141,11 +151,13 @@ brew install node
 ```
 
 Installer PostCSS dependencies:
+
 ```bash
 npm install
 ```
 
 Build kommandoer:
+
 ```bash
 # Build alle CSS filer
 npm run build
@@ -165,6 +177,7 @@ npm run prefix
 ## 📦 Templates
 
 ### Standard Side Templates (templates/)
+
 ```
 page-auto-el-fejlfinding.php      – Auto el & fejlfinding
 page-bilreparationer.php          – Bilreparationer
@@ -182,6 +195,7 @@ page-tak-for-booking.php          – Tak for booking
 ```
 
 ### Partials (templates/partials/)
+
 ```
 acf-contact-info.php              – ACF kontaktoplysninger shortcode
 contact-form.php                  – Kontaktformular
@@ -192,15 +206,18 @@ contact-form.php                  – Kontaktformular
 ## 🎯 ACF Integration
 
 ### Contact Info (group_68ee5d03037b9)
+
 Defineret i `acf-json/group_68ee5d03037b9.json`.
 
 **Shortcode:**
+
 ```php
 [hodja_contact_info]
 [hodja_contact_info hide_email="true"]
 ```
 
 **Helper funktion:**
+
 ```php
 $contact = hodja_get_acf_group_values('group_68ee5d03037b9');
 echo $contact['phone'];
@@ -223,12 +240,15 @@ echo $contact['phone'];
 ## 🚀 Deploy
 
 ### Via VS Code Task
+
 Brug den definerede task "Deploy & Flush":
+
 ```bash
 curl -sS "https://hodjaauto.alwaysdata.net/?hodja_flush=1&key=hodja-secret-123"
 ```
 
 ### Manuel Deploy
+
 1. Upload ændrede filer via SFTP (se `.vscode/sftp.json`)
 2. Ryd cache på server
 
@@ -237,11 +257,13 @@ curl -sS "https://hodjaauto.alwaysdata.net/?hodja_flush=1&key=hodja-secret-123"
 ## 📝 Vedligeholdelse
 
 ### Performance
+
 - Minificér CSS for produktion
 - Brug conditional loading (kun load CSS når nødvendigt)
 - Optimer billeder
 
 ### Code Quality
+
 - Valider CSS med stylelint (valgfrit)
 - Review kode før commit
 - Hold `functions.php` organiseret
@@ -251,12 +273,13 @@ curl -sS "https://hodjaauto.alwaysdata.net/?hodja_flush=1&key=hodja-secret-123"
 ## 🤝 Bidrag
 
 Ved ændringer:
+
 1. Commit med beskrivende beskeder
 2. Test grundigt
 3. Push til repository
 
 ---
 
-**Version:** 1.0  
-**Forfatter:** Hodja Auto Development Team  
+**Version:** 1.0
+**Forfatter:** Hodja Auto Development Team
 **Sidste opdatering:** December 2025

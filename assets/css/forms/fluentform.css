@@ -8,27 +8,27 @@
 ========================================= */
 
 /* Form Container */
-.contact-form-wrapper #fluentform_11,
-.contact-form-wrapper .fluentform {
+.ff-form-wrapper #fluentform_11,
+.ff-form-wrapper .fluentform {
   text-align: left;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-.contact-form-wrapper .ff-el-group:first-child {
+.ff-form-wrapper .ff-el-group:first-child {
   margin-top: 0 !important;
 }
 
 /* Form Fields - Moderne input styling */
-.contact-form-wrapper .ff-el-group {
+.ff-form-wrapper .ff-el-group {
   margin-bottom: 24px;
 }
 
-.contact-form-wrapper .ff-el-form-control,
-.contact-form-wrapper input[type="text"],
-.contact-form-wrapper input[type="email"],
-.contact-form-wrapper input[type="tel"],
-.contact-form-wrapper textarea {
+.ff-form-wrapper .ff-el-form-control,
+.ff-form-wrapper input[type="text"],
+.ff-form-wrapper input[type="email"],
+.ff-form-wrapper input[type="tel"],
+.ff-form-wrapper textarea {
   width: 100%;
   padding: 16px 20px;
   font-size: 1rem;
@@ -40,23 +40,23 @@
   color: #1a1a1a;
 }
 
-.contact-form-wrapper .ff-el-form-control:focus,
-.contact-form-wrapper input:focus,
-.contact-form-wrapper textarea:focus {
+.ff-form-wrapper .ff-el-form-control:focus,
+.ff-form-wrapper input:focus,
+.ff-form-wrapper textarea:focus {
   outline: none;
   border-color: #b00017;
   box-shadow: 0 0 0 4px rgba(176, 0, 23, 0.1);
   transform: translateY(-2px);
 }
 
-.contact-form-wrapper textarea {
+.ff-form-wrapper textarea {
   min-height: 140px;
   resize: vertical;
 }
 
 /* Labels */
-.contact-form-wrapper .ff-el-input--label label,
-.contact-form-wrapper label {
+.ff-form-wrapper .ff-el-input--label label,
+.ff-form-wrapper label {
   font-weight: 600;
   font-size: 0.9375rem;
   color: #1a1a1a;
@@ -65,9 +65,9 @@
 }
 
 /* Submit Button - Fed styling */
-.contact-form-wrapper .ff-btn-submit,
-.contact-form-wrapper button[type="submit"],
-.contact-form-wrapper .wpf-submit-btn {
+.ff-form-wrapper .ff-btn-submit,
+.ff-form-wrapper button[type="submit"],
+.ff-form-wrapper .wpf-submit-btn {
   width: 100%;
   padding: 18px 32px;
   font-size: 1.0625rem;
@@ -86,15 +86,15 @@
 }
 
 /* Button hover effect */
-.contact-form-wrapper .ff-btn-submit:hover,
-.contact-form-wrapper button[type="submit"]:hover {
+.ff-form-wrapper .ff-btn-submit:hover,
+.ff-form-wrapper button[type="submit"]:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 32px rgba(176, 0, 23, 0.45);
   background: linear-gradient(135deg, #8a0012 0%, #b00017 100%);
 }
 
 /* Button shine effect */
-.contact-form-wrapper .ff-btn-submit::before {
+.ff-form-wrapper .ff-btn-submit::before {
   content: "";
   position: absolute;
   top: 0;
@@ -110,28 +110,28 @@
   transition: left 0.5s ease;
 }
 
-.contact-form-wrapper .ff-btn-submit:hover::before {
+.ff-form-wrapper .ff-btn-submit:hover::before {
   left: 100%;
 }
 
 /* Placeholder styling */
-.contact-form-wrapper .ff-el-form-control::placeholder,
-.contact-form-wrapper input::placeholder,
-.contact-form-wrapper textarea::placeholder {
+.ff-form-wrapper .ff-el-form-control::placeholder,
+.ff-form-wrapper input::placeholder,
+.ff-form-wrapper textarea::placeholder {
   color: #999;
   opacity: 1;
 }
 
 /* Error states */
-.contact-form-wrapper .ff-el-is-error .ff-el-form-control,
-.contact-form-wrapper input.error,
-.contact-form-wrapper textarea.error {
+.ff-form-wrapper .ff-el-is-error .ff-el-form-control,
+.ff-form-wrapper input.error,
+.ff-form-wrapper textarea.error {
   border-color: #d32f2f;
 }
 
 /* Success message */
-.contact-form-wrapper .ff_success_msg,
-.contact-form-wrapper .fluentform .ff-message-success {
+.ff-form-wrapper .ff_success_msg,
+.ff-form-wrapper .fluentform .ff-message-success {
   background: #4caf50;
   color: #ffffff;
   padding: 16px 20px;
@@ -142,8 +142,8 @@
 }
 
 /* Error message */
-.contact-form-wrapper .ff-errors-in-stack,
-.contact-form-wrapper .error {
+.ff-form-wrapper .ff-errors-in-stack,
+.ff-form-wrapper .error {
   color: #d32f2f;
   font-size: 0.875rem;
   margin-top: 6px;
@@ -151,7 +151,7 @@
 }
 
 /* Required field indicator */
-.contact-form-wrapper .ff-el-input--label.ff-el-is-required label::after {
+.ff-form-wrapper .ff-el-input--label.ff-el-is-required label::after {
   content: " *";
   color: #b00017;
   font-weight: 700;
@@ -218,15 +218,15 @@
 ========================================= */
 
 @media (max-width: 640px) {
-  .contact-form-wrapper .ff-el-form-control,
-  .contact-form-wrapper input,
-  .contact-form-wrapper textarea {
+  .ff-form-wrapper .ff-el-form-control,
+  .ff-form-wrapper input,
+  .ff-form-wrapper textarea {
     padding: 14px 16px;
     font-size: 16px; /* Prevents zoom on iOS */
   }
 
-  .contact-form-wrapper .ff-btn-submit,
-  .contact-form-wrapper button[type="submit"] {
+  .ff-form-wrapper .ff-btn-submit,
+  .ff-form-wrapper button[type="submit"] {
     padding: 16px 28px;
     font-size: 1rem;
   }

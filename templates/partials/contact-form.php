@@ -7,12 +7,12 @@
  */
 ?>
 
-<div class="contact-form-wrapper">
+<div class="ff-form-wrapper">
     <?php
     if (shortcode_exists('fluentform')) {
         echo do_shortcode('[fluentform id="11"]');
     } else {
-        echo '<p>Kontaktformularen kunne ikke indlæses.</p>';
+        echo '<p>Kontaktformularen kunne ikke indl\u00e6ses.</p>';
     }
     ?>
 </div>
