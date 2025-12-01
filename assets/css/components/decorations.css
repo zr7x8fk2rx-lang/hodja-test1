@@ -1,0 +1,212 @@
+/* =========================================
+   DECORATION UTILITIES
+   Genbrugelige dekorative elementer
+========================================= */
+
+/* Decorative Line - SVG streg overlay */
+.decor-line {
+  position: relative;
+}
+
+.decor-line::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 18px;
+  width: 100px;
+  height: 25px;
+  background-image: url("https://hodjaauto.alwaysdata.net/wp-content/uploads/2025/12/streg.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Decor line variants */
+.decor-line--small::before {
+  width: 60px;
+  height: 15px;
+  left: 16px;
+  top: 12px;
+}
+
+.decor-line--large::before {
+  width: 140px;
+  height: 35px;
+  left: 32px;
+  top: 24px;
+}
+
+.decor-line--centered::before {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Top Highlight - Subtle gradient line at top */
+.surface-highlight {
+  position: relative;
+}
+
+.surface-highlight::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 4px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 999px;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+/* Gradient Glow - Animated red glow */
+.glow-red {
+  position: relative;
+}
+
+.glow-red::before {
+  content: "";
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--hodja-red-glow) 0%,
+    transparent 70%
+  );
+  filter: blur(20px);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Texture Overlay - Subtle grain/pattern */
+.texture-overlay {
+  position: relative;
+}
+
+.texture-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 0, 0, 0.008) 3px,
+    rgba(0, 0, 0, 0.008) 4px
+  );
+  opacity: 0.5;
+  border-radius: inherit;
+}
+
+/* Dot Pattern - Subtle background pattern */
+.pattern-dots {
+  position: relative;
+}
+
+.pattern-dots::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(
+    circle at 2px 2px,
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 0
+  );
+  background-size: 40px 40px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Glass Surface - Backdrop blur effect */
+.surface-glass {
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(6px) saturate(1.06);
+  -webkit-backdrop-filter: blur(6px) saturate(1.06);
+  border: 1px solid var(--card-border);
+}
+
+/* Panel Surface - Standard elevated panel */
+.surface-panel {
+  background: linear-gradient(180deg, #ffffff, var(--bg-warm));
+  border: 1px solid var(--card-border);
+  border-radius: clamp(16px, 2vw, 24px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Panel Surface - Red gradient variant */
+.surface-panel--red {
+  background: linear-gradient(
+    135deg,
+    rgba(176, 0, 23, 0.9) 0%,
+    rgba(139, 0, 18, 0.95) 50%,
+    rgba(26, 26, 26, 0.98) 100%
+  );
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Cinematic Section Wrapper */
+.section-cinematic {
+  position: relative;
+  background: radial-gradient(
+    ellipse 800px 400px at 50% 0%,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(247, 240, 232, 0.35) 100%
+  );
+  border-radius: 28px;
+  border: 1px solid rgba(216, 206, 196, 0.5);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.06),
+    0 4px 16px rgba(0, 0, 0, 0.03),
+    inset 0 2px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(176, 0, 23, 0.04);
+  padding: clamp(40px, 5vw, 60px) clamp(22px, 4vw, 40px);
+}
+
+.section-cinematic::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  pointer-events: none;
+  background: radial-gradient(
+      circle at 80% 20%,
+      rgba(176, 0, 23, 0.04) 0%,
+      transparent 50%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.008) 3px,
+      rgba(0, 0, 0, 0.008) 4px
+    );
+  opacity: 0.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .section-cinematic {
+    padding: clamp(24px, 4vw, 40px) clamp(16px, 3vw, 24px);
+    border-radius: 20px;
+  }
+
+  .decor-line::before {
+    left: 16px;
+    top: 12px;
+    width: 80px;
+    height: 20px;
+  }
+}

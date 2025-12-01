@@ -1,0 +1,23 @@
+{
+  "name": "hodja-auto-theme",
+  "version": "1.0.0",
+  "description": "WordPress theme for Hodja Auto with build tools",
+  "private": true,
+  "scripts": {
+    "build": "postcss assets/css/**/*.css --base assets/css --dir dist/css",
+    "build:global": "postcss assets/css/global.css -o dist/css/global.min.css",
+    "build:watch": "postcss assets/css/**/*.css --base assets/css --dir dist/css --watch",
+    "prefix": "postcss assets/css/**/*.css --base assets/css --dir assets/css --use autoprefixer --no-map"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "cssnano": "^6.0.1",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^11.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
