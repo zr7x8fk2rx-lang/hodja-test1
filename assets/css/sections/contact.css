@@ -3,13 +3,107 @@
 ========================================= */
 
 /* Forside bruger sin egen styling i front-page.css */
+/* Forside (home) kontaktsektion – flyttet fra front-page.css */
 body.home .contact-form-section {
-  background: none !important;
-  padding: 0 !important;
+  max-width: 1400px;
+  margin: 0 auto 80px;
+  padding: 50px clamp(22px, 4vw, 40px);
+  position: relative;
+  background: radial-gradient(
+    ellipse 800px 400px at 50% 0%,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(247, 240, 232, 0.35) 100%
+  );
+  border-radius: 28px;
+  border: 1px solid rgba(216, 206, 196, 0.5);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.03),
+    inset 0 2px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(176, 0, 23, 0.04);
 }
-
 body.home .contact-form-section::before {
-  content: none !important;
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  pointer-events: none;
+  background: radial-gradient(
+      circle at 80% 20%,
+      rgba(176, 0, 23, 0.04) 0%,
+      transparent 50%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.008) 3px,
+      rgba(0, 0, 0, 0.008) 4px
+    );
+  opacity: 0.5;
+}
+body.home .contact-form-title {
+  font-size: clamp(28px, 5vw, 38px);
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 16px;
+  letter-spacing: -0.04em;
+  background: linear-gradient(
+    135deg,
+    var(--text) 0%,
+    var(--hodja-red) 50%,
+    var(--text) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+body.home .contact-form-subtitle {
+  margin: 0 0 32px;
+  font-size: 16px;
+  color: var(--text-light);
+  text-align: center;
+}
+/* Skjul formularens titel-elementer på forsiden */
+body.home .contact-form-section .ff-el-header,
+body.home .contact-form-section .ff-form-header,
+body.home .contact-form-section .fluentform .ff_form_wrap .ff-el-form-top,
+body.home .contact-form-section .ff-el-group > .ff-el-header {
+  display: none !important;
+}
+/* Wrapper overrides (forside) */
+body.home .contact-form-wrapper {
+  position: relative;
+  padding: 28px 24px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff, #f7f0e8);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+body.home .contact-form-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 18px;
+  width: 100px;
+  height: 25px;
+  background-image: url("https://hodjaauto.alwaysdata.net/wp-content/uploads/2025/12/streg.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+}
+/* Responsive finpudsning (forside) */
+@media (max-width: 768px) {
+  body.home .contact-form-section {
+    margin: 30px auto 90px;
+    padding: 0 16px;
+  }
+  body.home .contact-form-wrapper {
+    padding: 22px 18px 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
 }
 
 /* Standard styling for andre sider */
@@ -39,9 +133,7 @@ body:not(.home) .contact-form-section::before {
   z-index: 0;
 }
 
-.contact-form-container {
-  /* Ingen styling - forside har sin egen styling */
-}
+/* Ingen styling for .contact-form-container - forside har sin egen styling */
 
 .contact-form-title {
   font-size: clamp(2rem, 5vw, 3rem);
@@ -372,7 +464,10 @@ body:not(.home) .contact-form-section::before {
   flex-direction: column;
 }
 /* Kontakt side layout */
-.kontakt-info { display: flex; flex-direction: column; }
+.kontakt-info {
+  display: flex;
+  flex-direction: column;
+}
 .kontakt-form .contact-form-subtitle {
   text-align: left;
   margin: 0 0 clamp(16px, 2vw, 24px);
@@ -397,7 +492,8 @@ body:not(.home) .contact-form-section::before {
   border-radius: clamp(16px, 2vw, 24px);
   padding: clamp(24px, 3vw, 36px);
   border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .kontakt-info-box::before {
