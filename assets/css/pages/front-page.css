@@ -528,8 +528,8 @@ section {
   margin-bottom: 24px;
 }
 
-/* Contact Form Wrapper */
-.contact-form-wrapper {
+/* Fluent Form Wrapper */
+.ff-form-wrapper {
   position: relative;
   padding: 28px 24px;
   border-radius: 18px;
@@ -539,7 +539,7 @@ section {
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
-.contact-form-wrapper::before {
+.ff-form-wrapper::before {
   content: "";
   position: absolute;
   left: 28px;
@@ -553,8 +553,8 @@ section {
   pointer-events: none;
 }
 
-/* Contact Info Wrapper */
-.contact-info-wrapper {
+/* ACF Contact Info Wrapper */
+.acf-info-wrapper {
   position: relative;
   padding: 28px 24px;
   border-radius: 18px;
@@ -564,7 +564,7 @@ section {
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
-.contact-info-wrapper::before {
+.acf-info-wrapper::before {
   content: "";
   position: absolute;
   left: 28px;
@@ -579,7 +579,7 @@ section {
 }
 
 /* Contact Cards */
-.contact-info-wrapper .contact-card {
+.acf-info-wrapper .contact-card {
   background: #f9f9f9;
   border: 1px solid #e5e0da;
   border-radius: 8px;
@@ -588,24 +588,24 @@ section {
   transition: background 0.2s ease;
 }
 
-.contact-info-wrapper .contact-card:last-child {
+.acf-info-wrapper .contact-card:last-child {
   margin-bottom: 0;
 }
 
-.contact-info-wrapper .contact-card:hover {
+.acf-info-wrapper .contact-card:hover {
   background: #f5f5f5;
 }
 
-.contact-info-wrapper .contact-card-header {
+.acf-info-wrapper .contact-card-header {
   display: block;
   margin-bottom: 10px;
 }
 
-.contact-info-wrapper .contact-icon {
+.acf-info-wrapper .contact-icon {
   display: none;
 }
 
-.contact-info-wrapper .contact-card-title {
+.acf-info-wrapper .contact-card-title {
   color: #b00017;
   font-size: 14px;
   font-weight: 700;
@@ -616,25 +616,25 @@ section {
   display: block;
 }
 
-.contact-info-wrapper .contact-card-text {
+.acf-info-wrapper .contact-card-text {
   color: #333333;
   font-size: 16px;
   line-height: 1.6;
   margin: 0;
 }
 
-.contact-info-wrapper .contact-card-link {
+.acf-info-wrapper .contact-card-link {
   color: #b00017;
   text-decoration: none;
   border-bottom: 1px solid rgba(176, 0, 23, 0.3);
 }
 
-.contact-info-wrapper .contact-card-link:hover {
+.acf-info-wrapper .contact-card-link:hover {
   color: #8b0012;
   border-bottom-color: rgba(176, 0, 23, 0.5);
 }
 
-.contact-info-wrapper .contact-card--opening .contact-card-text {
+.acf-info-wrapper .contact-card--opening .contact-card-text {
   color: #b00017;
 }
 
@@ -644,7 +644,7 @@ section {
 
 @supports (backdrop-filter: blur(4px)) {
   .services-box,
-  .contact-form-wrapper {
+  .ff-form-wrapper {
     background: rgba(255, 255, 255, 0.82);
     backdrop-filter: blur(4px) saturate(1.05);
     -webkit-backdrop-filter: blur(4px) saturate(1.05);
@@ -654,7 +654,7 @@ section {
 /* fallback hvis browser IKKE understøtter blur */
 @supports not (backdrop-filter: blur(4px)) {
   .services-box,
-  .contact-form-wrapper {
+  .ff-form-wrapper {
     background: #ffffff;
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
   }
@@ -938,7 +938,8 @@ section {
     padding: 24px 16px 0;
   }
 
-  .services-box {
+  .services-box,
+  .ff-form-wrapper {
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
   }
 }

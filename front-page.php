@@ -139,7 +139,7 @@ get_header(); ?>
                         <h2 class="contact-form-title">Skriv til os</h2>
                         <p class="contact-form-subtitle">Har du spørgsmål eller brug for hjælp? Send os en besked, så vender vi tilbage hurtigst muligt.</p>
                     </div>
-                    <div class="contact-form-wrapper">
+                    <div class="ff-form-wrapper">
                         <?php echo do_shortcode('[fluentform id="11"]'); ?>
                     </div>
                 </div>
@@ -148,7 +148,7 @@ get_header(); ?>
                         <h2 class="contact-form-title">Kontaktoplysninger</h2>
                         <p class="contact-form-subtitle">Find os her – <br>vi er klar til at hjælpe dig.</p>
                     </div>
-                    <div class="contact-info-wrapper">
+                    <div class="acf-info-wrapper">
                         <?php get_template_part('templates/partials/acf-contact-info'); ?>
                     </div>
                 </div>

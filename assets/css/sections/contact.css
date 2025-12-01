@@ -72,7 +72,7 @@ body.home .contact-form-section .ff-el-group > .ff-el-header {
   display: none !important;
 }
 /* Wrapper overrides (forside) */
-body.home .contact-form-wrapper {
+body.home .ff-form-wrapper {
   position: relative;
   padding: 28px 24px;
   border-radius: 18px;
@@ -81,7 +81,7 @@ body.home .contact-form-wrapper {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06),
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
-body.home .contact-form-wrapper::before {
+body.home .ff-form-wrapper::before {
   content: "";
   position: absolute;
   left: 28px;
@@ -100,7 +100,7 @@ body.home .contact-form-wrapper::before {
     margin: 30px auto 90px;
     padding: 0 16px;
   }
-  body.home .contact-form-wrapper {
+  body.home .ff-form-wrapper {
     padding: 22px 18px 24px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   }
@@ -144,7 +144,7 @@ body:not(.home) .contact-form-section::before {
   text-shadow: none;
 }
 
-/* NOTE: Base styling for .contact-form-wrapper og .contact-grid er i front-page.css
+/* NOTE: Base styling for .ff-form-wrapper, .acf-info-wrapper og .contact-grid er i front-page.css
    Kun body.home overrides og kontaktside-specifikke styles er herunder */
 
 /* =========================================
