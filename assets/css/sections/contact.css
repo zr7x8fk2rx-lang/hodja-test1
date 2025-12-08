@@ -399,6 +399,7 @@ body:not(.home) .contact-form-section::before {
   width: 100%;
   padding: clamp(50px, 6vw, 90px) clamp(20px, 4vw, 40px);
   background: #0f0f0f; /* mørk base for at matche kontaktkortenes hvide tekst */
+  overflow: hidden;
 }
 .kontakt-container {
   max-width: 1200px;
