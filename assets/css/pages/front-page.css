@@ -503,7 +503,11 @@ section {
 /* =========================================
    5. CONTACT SECTION - Skriv til os
    Two column grid: Form + Contact Info
-   NOTE: body.home overrides er i contact.css
+   
+   Wrapper Styling References:
+   - .ff-form-wrapper styling → assets/css/forms/ff-form.css
+   - .acf-info-wrapper styling → assets/css/forms/acf-info.css
+   - .contact-grid base layout → here (front-page.css)
    ========================================= */
 .contact-form-section {
   padding-top: 80px;
