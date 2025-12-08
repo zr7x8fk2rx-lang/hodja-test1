@@ -578,65 +578,7 @@ section {
   pointer-events: none;
 }
 
-/* Contact Cards */
-.acf-info-wrapper .contact-card {
-  background: #f9f9f9;
-  border: 1px solid #e5e0da;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 16px;
-  transition: background 0.2s ease;
-}
-
-.acf-info-wrapper .contact-card:last-child {
-  margin-bottom: 0;
-}
-
-.acf-info-wrapper .contact-card:hover {
-  background: #f5f5f5;
-}
-
-.acf-info-wrapper .contact-card-header {
-  display: block;
-  margin-bottom: 10px;
-}
-
-.acf-info-wrapper .contact-icon {
-  display: none;
-}
-
-.acf-info-wrapper .contact-card-title {
-  color: #b00017;
-  font-size: 14px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  line-height: 1.2;
-  margin-bottom: 10px;
-  display: block;
-}
-
-.acf-info-wrapper .contact-card-text {
-  color: #333333;
-  font-size: 16px;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.acf-info-wrapper .contact-card-link {
-  color: #b00017;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(176, 0, 23, 0.3);
-}
-
-.acf-info-wrapper .contact-card-link:hover {
-  color: #8b0012;
-  border-bottom-color: rgba(176, 0, 23, 0.5);
-}
-
-.acf-info-wrapper .contact-card--opening .contact-card-text {
-  color: #b00017;
-}
+/* NOTE: Contact card styling is now in assets/css/forms/acf-info.css (includes forside overrides with body.home scope) */
 
 /* =========================================
    GLOBAL CINEMATIC SURFACE – GLAS-KORT
