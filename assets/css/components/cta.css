@@ -3,7 +3,10 @@
    Bruges til alle CTA buttons på sitet
 ========================================= */
 
-/* Hero Button */
+/* =========================================
+   1. HERO BUTTON – .home-herobutton
+   Stor rød button til hero sektion (forside)
+========================================= */
 .home-herobutton {
   display: inline-block;
   padding: 16px 40px;
@@ -33,7 +36,10 @@
     0 12px 28px rgba(176, 0, 23, 0.28) !important;
 }
 
-/* Primary Button */
+/* =========================================
+   2. PRIMARY BUTTON – .btn-primary
+   Standard rød button til booking osv
+========================================= */
 .btn-primary {
   display: inline-block;
   padding: 16px 28px;
@@ -54,12 +60,21 @@
   transform: translateY(-2px);
 }
 
-/* Service CTA */
+/* =========================================
+   3. SERVICE CTA – .services-cta
+   Inline CTA link i service cards
+========================================= */
 .services-cta {
   display: inline-block;
   margin-top: 8px;
 }
 
+/* =========================================
+   4. CTA BUTTON VARIANTS – .cta-button
+   Flere varianter til forskellige kontekster
+========================================= */
+
+/* Variant 1: Glass effect button */
 .cta-button {
   display: inline-flex;
   align-items: center;
@@ -126,6 +141,7 @@
   stroke: #fff;
 }
 
+/* Variant 2: Gradient red button (300px max-width) */
 .cta-button {
   width: 100%;
   max-width: 280px;
@@ -186,6 +202,7 @@
   transform: translateY(-1px);
 }
 
+/* Variant 3: Centered button (300px max-width) */
 .cta-button {
   width: 100%;
   max-width: 300px;
@@ -223,4 +240,3 @@
   );
   box-shadow: 0 12px 28px rgba(176, 0, 23, 0.32);
 }
-
