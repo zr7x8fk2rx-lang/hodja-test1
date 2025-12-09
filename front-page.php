@@ -126,7 +126,7 @@ get_header(); ?>
     <!-- BOOKING CTA BAND -->
     <section class="booking-cta">
         <div class="container">
-            <a class="btn-primary" href="<?php echo esc_url(home_url('/book-vaerkstedstid-online/')); ?>">Book tid online</a>
+            <a class="booking-button" href="<?php echo esc_url(home_url('/book-vaerkstedstid-online/')); ?>">Book tid online</a>
         </div>
     </section>
 

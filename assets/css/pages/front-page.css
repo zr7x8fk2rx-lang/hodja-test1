@@ -270,7 +270,7 @@ html {
 
 /* ================================
    CTA Button Styling Reference
-   All CTA button styles (.home-herobutton, .btn-primary, .services-cta, .cta-button)
+/* All CTA button styles (.home-herobutton, .booking-button, .services-cta, .cta-button)
    are defined in assets/css/components/cta.css
    ================================ */
 
@@ -709,7 +709,7 @@ section {
   padding-bottom: 64px;
 }
 
-/* NOTE: .btn-primary styling → assets/css/components/cta.css */
+/* NOTE: .booking-button styling → assets/css/components/cta.css */
 
 /* =========================================
    5. CONTACT SECTION - Skriv til os

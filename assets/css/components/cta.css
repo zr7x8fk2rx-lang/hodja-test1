@@ -37,10 +37,10 @@
 }
 
 /* =========================================
-   2. PRIMARY BUTTON – .btn-primary
+   2. BOOKING BUTTON – .booking-button
    Standard rød button til booking osv
 ========================================= */
-.btn-primary {
+.booking-button {
   display: inline-block;
   padding: 16px 28px;
   border-radius: 8px;
@@ -54,7 +54,7 @@
     background-color 0.2s ease;
 }
 
-.btn-primary:hover {
+.booking-button:hover {
   background: #8b0012;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
   transform: translateY(-2px);
