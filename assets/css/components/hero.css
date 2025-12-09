@@ -1,42 +1,4 @@
-/* Match home button style for other hero CTAs */
-.servicepage-hero .cta-button,
-.servicepage-hero .hero-cta,
-.services-hero .cta-button,
-.services-hero .hero-cta,
-.about-hero .cta-button,
-.about-hero .hero-cta {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 28px;
-  color: #ffffff;
-  background: linear-gradient(135deg, #b00017 0%, #8b0012 50%, #b00017 100%);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 700;
-  border-radius: 50px;
-  box-shadow: 0 8px 32px rgba(176, 0, 23, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  cursor: pointer;
-}
-
-.servicepage-hero .cta-button:hover,
-.servicepage-hero .hero-cta:hover,
-.services-hero .cta-button:hover,
-.services-hero .hero-cta:hover,
-.about-hero .cta-button:hover,
-.about-hero .hero-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 40px rgba(176, 0, 23, 0.6), 0 8px 25px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  background: linear-gradient(135deg, #8b0012 0%, #b00017 50%, #8b0012 100%);
-  border-color: rgba(255, 255, 255, 0.4);
-}
+/* Hero CTA styling ligger i assets/css/components/cta.css (Sektion 1) */
 /* heroes */
 /* =========================================
    HEROES (Home, Servicepage, Services, Om os)
@@ -94,30 +56,7 @@
   margin: 0 auto;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
-.hero-cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: clamp(16px, 2.2vw, 24px);
-  padding: 14px 28px;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 999px;
-  background: linear-gradient(
-    135deg,
-    var(--hodja-red) 0%,
-    var(--hodja-red-dark) 100%
-  );
-  box-shadow: 0 10px 28px rgba(176, 0, 23, 0.35);
-  transition: transform 0.25s, box-shadow 0.25s, filter 0.25s;
-}
-.hero-cta:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.04);
-}
+/* hero-cta styling samlet i assets/css/components/cta.css (Sektion 1) */
 
 /* ---------- HOME ---------- */
 /* Hero Section */
@@ -236,90 +175,11 @@
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.22) !important;
 }
 
-/* Hero Button - Professional Style */
-.home-herobutton {
-  position: relative !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  padding: 14px 28px !important;
-  color: #ffffff !important;
-  background: linear-gradient(
-    135deg,
-    #b00017 0%,
-    #8b0012 50%,
-    #b00017 100%
-  ) !important;
-  border: 2px solid rgba(255, 255, 255, 0.2) !important;
-  text-decoration: none !important;
-  font-size: 1rem !important;
-  font-weight: 700 !important;
-  border-radius: 50px !important;
-  box-shadow: 0 8px 32px rgba(176, 0, 23, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.6px !important;
-  cursor: pointer !important;
-  overflow: hidden !important;
-}
-
-.home-herobutton::before {
-  content: "" !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: -100% !important;
-  width: 100% !important;
-  height: 100% !important;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  ) !important;
-  transition: left 0.6s ease !important;
-  z-index: 1 !important;
-}
-
-/* Button Text - Force transparent background */
-.home-herobutton *,
-.home-herobutton span,
-.home-herobutton div {
-  position: relative !important;
-  z-index: 2 !important;
-  color: #ffffff !important;
-  background-color: transparent !important;
-  background: none !important;
-  border: none !important;
-  fill: #ffffff !important;
-  stroke: #ffffff !important;
-}
-
-.home-herobutton:hover {
-  transform: translateY(-3px) scale(1.05) !important;
-  box-shadow: 0 15px 40px rgba(176, 0, 23, 0.6), 0 8px 25px rgba(0, 0, 0, 0.4),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
-  background: linear-gradient(
-    135deg,
-    #8b0012 0%,
-    #b00017 50%,
-    #8b0012 100%
-  ) !important;
-  border-color: rgba(255, 255, 255, 0.4) !important;
-}
-
-.home-herobutton:hover::before {
-  left: 100% !important;
-}
-
-.home-herobutton:active {
-  transform: translateY(-1px) scale(1.02) !important;
-  box-shadow: 0 8px 20px rgba(176, 0, 23, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-}
+/* Hero Button - styling flyttet til assets/css/components/cta.css (Sektion 1) */
 
 /* Button Icon Styling */
-.home-herobutton svg,
-.home-herobutton i {
+.hero-cta svg,
+.hero-cta i {
   position: relative !important;
   z-index: 2 !important;
   color: #ffffff !important;
@@ -346,7 +206,7 @@
     font-size: 1rem !important;
   }
 
-  .home-herobutton {
+  .hero-cta {
     padding: 12px 24px !important;
     font-size: 0.95rem !important;
   }

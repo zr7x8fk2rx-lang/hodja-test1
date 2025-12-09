@@ -14,7 +14,7 @@ get_header();
         <div class="servicepage-herocontainer">
             <h1 class="servicepage-herotitle">Dæk & Fælge</h1>
             <p class="servicepage-herotext">Hos Hodja Auto tilbyder vi alt fra dækskift og afbalancering til opbevaring og salg af nye dæk og fælge i høj kvalitet.</p>
-            <a class="cta-button" href="<?php echo esc_url(home_url('/booking/')); ?>">Book dækskift</a>
+            <a class="hero-cta" href="<?php echo esc_url(home_url('/booking/')); ?>">Book dækskift</a>
         </div>
     </section>
 

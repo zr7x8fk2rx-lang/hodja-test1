@@ -140,22 +140,7 @@ servicepage-section {
   font-size: 1.25rem;
 }
 
-/* CTA Button */
-.cta-button {
-  display: inline-block;
-  background: #b00017;
-  color: #fff;
-  padding: clamp(0.75rem, 1.5vw, 0.875rem) clamp(1.5rem, 3vw, 2rem);
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s ease;
-  margin-top: clamp(20px, 3vw, 30px);
-  font-size: clamp(0.95rem, 2vw, 1.0625rem);
-}
-.cta-button:hover {
-  background: #8b0012;
-}
+/* CTA Button - styling flyttet til assets/css/components/cta.css (Sektion 1C) */
 
 @media (max-width: 768px) {
   .servicepage-section {

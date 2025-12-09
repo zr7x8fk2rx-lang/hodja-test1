@@ -14,7 +14,7 @@ get_header();
         <div class="servicepage-herocontainer">
             <h1 class="servicepage-herotitle">Auto-el & Fejlfinding</h1>
             <p class="servicepage-herotext">Vi løser elektriske fejl og udfører avanceret fejlfinding med det nyeste diagnoseudstyr – hurtigt og effektivt.</p>
-            <a class="cta-button" href="<?php echo esc_url(home_url('/booking/')); ?>">Book fejlfinding</a>
+            <a class="hero-cta" href="<?php echo esc_url(home_url('/booking/')); ?>">Book fejlfinding</a>
         </div>
     </section>
 

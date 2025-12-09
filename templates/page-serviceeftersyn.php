@@ -15,7 +15,7 @@ get_header();
         <div class="servicepage-herocontainer">
             <h1 class="servicepage-herotitle">Serviceeftersyn &amp; Vedligeholdelse</h1>
             <p class="servicepage-herotext">Få udført dit serviceeftersyn efter fabrikkens forskrifter – vi sørger for, at din bil kører som ny, uanset mærke.</p>
-            <a class="cta-button" href="<?php echo esc_url(home_url('/booking/')); ?>">Book service</a>
+            <a class="hero-cta" href="<?php echo esc_url(home_url('/booking/')); ?>">Book service</a>
         </div>
     </section>
 

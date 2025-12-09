@@ -17,7 +17,7 @@ get_header();
         <div class="services-herocontainer">
             <h1 class="services-herotitle">Bilservice i Taastrup</h1>
             <p class="services-herotext">
-                Professionelt autoværksted &amp; skadecenter – service på alle bilmærker.
+                Professionelt autoværksted & skadecenter – service på alle bilmærker.
                 Moderne diagnoseudstyr, fair priser og gennemsigtighed.
             </p>
             <a class="hero-cta" href="<?php echo esc_url(home_url('/booking/')); ?>">

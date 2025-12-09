@@ -14,7 +14,7 @@ get_header();
         <div class="servicepage-herocontainer">
             <h1 class="servicepage-herotitle">Bilreparationer</h1>
             <p class="servicepage-herotext">Hos Hodja Auto udfører vi alt fra mindre reparationer til større mekaniske opgaver – altid med fokus på kvalitet, sikkerhed og fair priser.</p>
-            <a class="cta-button" href="<?php echo esc_url(home_url('/booking/')); ?>">Få et tilbud</a>
+            <a class="hero-cta" href="<?php echo esc_url(home_url('/booking/')); ?>">Få et tilbud</a>
         </div>
     </section>
 
