@@ -1,14 +1,15 @@
 /* =========================================
-   CTA BUTTONS - Samlet styling
-   Bruges til alle CTA buttons på sitet
-========================================= */
+   CTA BUTTONS - Samlet styling for hele sitet
+   ========================================= */
 
 /* =========================================
-  1. HERO CTA – .hero-cta
+   SEKTION 1: HERO CTA BUTTONS
+   ========================================= */
 
-  Bruges på:
-  - Alle hero sektioner (forside, bilservice, service-undersider, om os)
-========================================= */
+/* ---------- 1A. HOME HERO (.hero-cta) ----------
+   Bruges på: front-page.php (.home-hero)
+   Reference: assets/css/components/hero.css (HOME sektion)
+   ========================================= */
 .hero-cta {
   position: relative !important;
   display: inline-flex !important;
@@ -53,7 +54,6 @@
   z-index: 1 !important;
 }
 
-/* Button Text - Force transparent background */
 .hero-cta *,
 .hero-cta span,
 .hero-cta div {
@@ -89,15 +89,96 @@
   box-shadow: 0 8px 20px rgba(176, 0, 23, 0.5), 0 4px 12px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* =========================================
-   1B. HERO CTA OVERRIDES – Service/About Heroes
+/* ---------- 1B. SERVICES HERO (.hero-cta) ----------
+   Bruges på: page-bilservice.php (.services-hero)
+   Reference: assets/css/components/hero.css (SERVICES sektion)
+   ========================================= */
+.services-hero .hero-cta {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 14px 28px !important;
+  color: #ffffff !important;
+  background: linear-gradient(
+    135deg,
+    #b00017 0%,
+    #8b0012 50%,
+    #b00017 100%
+  ) !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  text-decoration: none !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  border-radius: 50px !important;
+  box-shadow: 0 8px 32px rgba(176, 0, 23, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.6px !important;
+  cursor: pointer !important;
+}
 
-   Bruges på:
-   - Service undersider: Bilservice, Serviceeftersyn, osv.
-   - Om os side
-========================================= */
-.servicepage-hero .hero-cta,
-.services-hero .hero-cta,
+.services-hero .hero-cta:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 15px 40px rgba(176, 0, 23, 0.6), 0 8px 25px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  background: linear-gradient(
+    135deg,
+    #8b0012 0%,
+    #b00017 50%,
+    #8b0012 100%
+  ) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* ---------- 1C. SERVICEPAGE HERO (.hero-cta) ----------
+   Bruges på: page-serviceeftersyn.php, page-bilreparationer.php osv (.servicepage-hero)
+   Reference: assets/css/components/hero.css (SERVICEPAGE sektion)
+   ========================================= */
+.servicepage-hero .hero-cta {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 14px 28px !important;
+  color: #ffffff !important;
+  background: linear-gradient(
+    135deg,
+    #b00017 0%,
+    #8b0012 50%,
+    #b00017 100%
+  ) !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  text-decoration: none !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  border-radius: 50px !important;
+  box-shadow: 0 8px 32px rgba(176, 0, 23, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.6px !important;
+  cursor: pointer !important;
+}
+
+.servicepage-hero .hero-cta:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 15px 40px rgba(176, 0, 23, 0.6), 0 8px 25px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  background: linear-gradient(
+    135deg,
+    #8b0012 0%,
+    #b00017 50%,
+    #8b0012 100%
+  ) !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* ---------- 1D. ABOUT HERO (.hero-cta) ----------
+   Bruges på: page-om-os.php (.about-hero)
+   Reference: assets/css/components/hero.css (OM OS sektion)
+   ========================================= */
 .about-hero .hero-cta {
   position: relative !important;
   display: inline-flex !important;
@@ -124,8 +205,6 @@
   cursor: pointer !important;
 }
 
-.servicepage-hero .hero-cta:hover,
-.services-hero .hero-cta:hover,
 .about-hero .hero-cta:hover {
   transform: translateY(-2px) !important;
   box-shadow: 0 15px 40px rgba(176, 0, 23, 0.6), 0 8px 25px rgba(0, 0, 0, 0.4),
@@ -140,11 +219,13 @@
 }
 
 /* =========================================
-   1C. SERVICEPAGE CTA – .cta-button (servicepage.css)
+   SEKTION 2: CONTENT CTA BUTTONS
+   ========================================= */
 
-   Bruges på:
-   - Service undersider content sektioner
-========================================= */
+/* ---------- 2A. SERVICEPAGE CONTENT (.cta-button) ----------
+   Bruges på: Service undersider content sektioner
+   Reference: assets/css/pages/servicepage.css
+   ========================================= */
 .servicepage-section .cta-button {
   display: inline-block;
   background: #b00017;
@@ -162,10 +243,10 @@
   background: #8b0012;
 }
 
-/* =========================================
-   2. BOOKING BUTTON – .booking-button
-   Standard rød button til booking osv
-========================================= */
+/* ---------- 2B. BOOKING BUTTON (.booking-button) ----------
+   Bruges på: Booking sektioner, Call-to-action områder
+   Reference: front-page.php, page-kontakt.php
+   ========================================= */
 .booking-button {
   display: inline-block;
   padding: 16px 28px;
@@ -186,191 +267,16 @@
   transform: translateY(-2px);
 }
 
-/* =========================================
-   3. SERVICE CTA – .services-cta
-   Inline CTA link i service cards
-========================================= */
+/* ---------- 2C. SERVICE CTA LINK (.services-cta) ----------
+   Bruges på: Service cards på forsiden
+   Reference: front-page.php (.services-box)
+   ========================================= */
 .services-cta {
   display: inline-block;
   margin-top: 8px;
-}
-
-/* =========================================
-   4. CTA BUTTON VARIANTS – .cta-button
-
-   Bruges på:
-   - Forside: Hero sektion (6 steder)
-   - Bilservice: Hero sektion (8 steder)
-   - Service undersider: Serviceeftersyn, Drejearbejde, Dæk/Fælge osv
-   - Andre sider: Kontakt, Booking, Om os
-========================================= */
-
-/* Variant 1: Glass effect button (glaseffekt med backdrop blur)
-   Bruges i hero sektioner med baggrundsbillede */
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  margin-top: clamp(16px, 2vw, 24px);
-  padding: clamp(12px, 1.8vw, 16px) clamp(24px, 3.5vw, 32px);
-  font-size: clamp(14px, 1.6vw, 16px);
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: clamp(8px, 1vw, 12px);
+  color: #b00017;
+  font-weight: 600;
   text-decoration: none;
-  backdrop-filter: blur(15px);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(176, 0, 23, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  opacity: 1;
-}
-
-.cta-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.6s ease;
-}
-
-.cta-button:hover {
-  background: rgba(255, 255, 255, 0.25);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(176, 0, 23, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.3);
-}
-
-.cta-button:hover::before {
-  left: 100%;
-}
-
-.cta-button,
-[class$="-herocontainer"] .cta-button *,
-[class$="-herocontainer"] .cta-button span,
-[class$="-herocontainer"] .cta-button div {
-  position: relative;
-  z-index: 2;
-  color: #fff;
-  background: none;
-  border: none;
-  fill: #fff;
-  stroke: #fff;
-}
-
-/* Variant 2: Gradient red button med fast bredde (280px max)
-   Bruges på service undersider og content sektioner */
-.cta-button {
-  width: 100%;
-  max-width: 280px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: clamp(14px, 1.8vw, 16px) clamp(26px, 3.5vw, 32px);
-  font-size: clamp(14px, 1.6vw, 16px);
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  background: linear-gradient(135deg, #b00017 0%, #8b0012 100%);
-  color: #fff;
-  border: none;
-  border-radius: clamp(8px, 1vw, 12px);
-  text-decoration: none;
-  backdrop-filter: blur(10px);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25), 0 4px 12px rgba(176, 0, 23, 0.15),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-}
-
-.cta-button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.2),
-    transparent
-  );
-  transition: left 0.6s ease;
-}
-
-.cta-button:hover {
-  transform: translateY(-2px) scale(1.03);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(176, 0, 23, 0.25);
-  background: linear-gradient(135deg, #8b0012 0%, #b00017 100%);
-}
-
-.cta-button:hover::before {
-  left: 100%;
-}
-
-.cta-button:active {
-  transform: translateY(-1px);
-}
-
-/* Variant 3: Centered button med CSS variables (300px max)
-   Bruges i content områder der skal være centreret */
-.cta-button {
-  width: 100%;
-  max-width: 300px;
-  margin: 0 auto;
-}
-
-.cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 20px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  color: #fff !important;
-  background: linear-gradient(
-    135deg,
-    var(--hodja-red) 0%,
-    var(--hodja-red-dark) 100%
-  );
-  border: 2px solid rgba(176, 0, 23, 0.18);
-  border-radius: 12px;
-  text-decoration: none !important;
-  box-shadow: 0 8px 22px rgba(176, 0, 23, 0.23);
-  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-}
-
-.cta-button:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(
-    135deg,
-    var(--hodja-red-dark) 0%,
-    var(--hodja-red) 100%
-  );
-  box-shadow: 0 12px 28px rgba(176, 0, 23, 0.32);
+  border-bottom: 1px solid rgba(176, 0, 23, 0.3);
+  transition: color 0.3s ease, border-color 0.3s ease;
 }

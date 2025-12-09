@@ -83,6 +83,28 @@ add_action('wp_enqueue_scripts', function () {
         );
     }
 
+    // 🎨 CTA CSS – globalt (alle sider)
+    $cta_css = $theme_dir . '/assets/css/components/cta.css';
+    if (file_exists($cta_css)) {
+        wp_enqueue_style(
+            'hodja-cta',
+            $theme_uri . '/assets/css/components/cta.css',
+            ['hodja-global'],
+            filemtime($cta_css)
+        );
+    }
+
+    // 🎨 Hero CSS – globalt (alle sider)
+    $hero_css = $theme_dir . '/assets/css/components/hero.css';
+    if (file_exists($hero_css)) {
+        wp_enqueue_style(
+            'hodja-hero',
+            $theme_uri . '/assets/css/components/hero.css',
+            ['hodja-global'],
+            filemtime($hero_css)
+        );
+    }
+
     // 📄 Servicepage CSS (kun på servicepage-sider)
     if (
         is_page_template('templates/page-bilreparationer.php')
@@ -96,17 +118,6 @@ add_action('wp_enqueue_scripts', function () {
         || is_page_template('templates/page-faq.php')
         || is_page('om-os')
     ) {
-        // Hero CSS for servicepage hero sektion
-        $hero_css = $theme_dir . '/assets/css/components/hero.css';
-        if (file_exists($hero_css)) {
-            wp_enqueue_style(
-                'hodja-hero',
-                $theme_uri . '/assets/css/components/hero.css',
-                ['hodja-global'],
-                filemtime($hero_css)
-            );
-        }
-
         // Servicepage content CSS
         $servicepage_css = $theme_dir . '/assets/css/pages/servicepage.css';
         if (file_exists($servicepage_css)) {
@@ -119,18 +130,8 @@ add_action('wp_enqueue_scripts', function () {
         }
     }
 
-    // 🎨 Bilservice side - Hero & Services components
+    // 🎨 Bilservice side - Services components
     if (is_page_template('templates/page-bilservice.php')) {
-        $hero_css = $theme_dir . '/assets/css/components/hero.css';
-        if (file_exists($hero_css)) {
-            wp_enqueue_style(
-                'hodja-hero',
-                $theme_uri . '/assets/css/components/hero.css',
-                ['hodja-global'],
-                filemtime($hero_css)
-            );
-        }
-
         $services_css = $theme_dir . '/assets/css/components/services.css';
         if (file_exists($services_css)) {
             wp_enqueue_style(
@@ -142,19 +143,8 @@ add_action('wp_enqueue_scripts', function () {
         }
     }
 
-    // 📇 Kontakt side - hero, kontakt sektion og formularer
+    // 📇 Kontakt side - kontakt sektion og formularer
     if (is_page_template('templates/page-kontakt.php') || is_page('kontakt')) {
-        // Hero CSS
-        $hero_css = $theme_dir . '/assets/css/components/hero.css';
-        if (file_exists($hero_css)) {
-            wp_enqueue_style(
-                'hodja-hero',
-                $theme_uri . '/assets/css/components/hero.css',
-                ['hodja-global'],
-                filemtime($hero_css)
-            );
-        }
-
         $contact_css = $theme_dir . '/assets/css/sections/contact.css';
         if (file_exists($contact_css)) {
             wp_enqueue_style(
@@ -186,17 +176,6 @@ add_action('wp_enqueue_scripts', function () {
         }
     }    // 🏠 Front-page (forside) CSS
     if (is_front_page()) {
-        // Hero CSS
-        $hero_css = $theme_dir . '/assets/css/components/hero.css';
-        if (file_exists($hero_css)) {
-            wp_enqueue_style(
-                'hodja-hero',
-                $theme_uri . '/assets/css/components/hero.css',
-                ['hodja-global'],
-                filemtime($hero_css)
-            );
-        }
-
         // USP CSS
         $usp_css = $theme_dir . '/assets/css/components/usp.css';
         if (file_exists($usp_css)) {
@@ -216,17 +195,6 @@ add_action('wp_enqueue_scripts', function () {
                 $theme_uri . '/assets/css/components/services.css',
                 ['hodja-global'],
                 filemtime($services_css)
-            );
-        }
-
-        // CTA CSS
-        $cta_css = $theme_dir . '/assets/css/components/cta.css';
-        if (file_exists($cta_css)) {
-            wp_enqueue_style(
-                'hodja-cta',
-                $theme_uri . '/assets/css/components/cta.css',
-                ['hodja-global'],
-                filemtime($cta_css)
             );
         }
 
@@ -275,19 +243,9 @@ add_action('wp_enqueue_scripts', function () {
         }
     }
 
-    // 🧩 Fallback: Enqueue hero + servicepage CSS på alle almindelige sider
-    // Sikrer at page.php (standard skabelon) får hero og indholds-styling
+    // 🧩 Fallback: Enqueue servicepage CSS på alle almindelige sider
+    // Sikrer at page.php (standard skabelon) får indholds-styling
     if (is_page() && !is_front_page()) {
-        $hero_css = $theme_dir . '/assets/css/components/hero.css';
-        if (file_exists($hero_css)) {
-            wp_enqueue_style(
-                'hodja-hero',
-                $theme_uri . '/assets/css/components/hero.css',
-                ['hodja-global'],
-                filemtime($hero_css)
-            );
-        }
-
         $servicepage_css = $theme_dir . '/assets/css/pages/servicepage.css';
         if (file_exists($servicepage_css)) {
             wp_enqueue_style(

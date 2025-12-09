@@ -59,6 +59,7 @@
 /* hero-cta styling samlet i assets/css/components/cta.css (Sektion 1) */
 
 /* ---------- HOME ---------- */
+/* Hero Section */
 .home-hero {
   position: relative;
   display: flex !important;
@@ -94,12 +95,11 @@
     ),
     url("https://hodjaauto.alwaysdata.net/wp-content/uploads/2025/11/forside.png") !important;
   background-size: auto, auto, auto, cover !important;
-  background-position: center, center, 85% -10%, var(--hero-focal) !important;
+  background-position: center, center, 85% -10%, center 38% !important;
   background-repeat: no-repeat !important;
   background-attachment: scroll, scroll, scroll, fixed !important;
 }
 
-/* Filmisk korn/vignette */
 .home-hero::before {
   content: "";
   position: absolute;
@@ -115,7 +115,6 @@
   opacity: 0.22 !important;
 }
 
-/* RØD GLOW — TOP */
 .home-hero::after {
   content: "";
   position: absolute;
@@ -140,35 +139,7 @@
   }
 }
 
-/* Scroll-reaktion (kun moderne browsere) */
-@supports (animation-timeline: auto) {
-  .home-hero {
-    view-timeline-name: --hero;
-    view-timeline-axis: block;
-  }
-
-  .home-hero::after {
-    animation-name: hodjaLightSweep, hodjaParallax;
-    animation-duration: 13.5s, 1s;
-    animation-timing-function: linear, linear;
-    animation-iteration-count: infinite, 1;
-    animation-timeline: auto, --hero;
-    animation-range: normal, entry 0% exit 85%;
-  }
-
-  @keyframes hodjaParallax {
-    from {
-      transform: translateY(0);
-      opacity: 0.26;
-    }
-    to {
-      transform: translateY(20px);
-      opacity: 0.18;
-    }
-  }
-}
-
-/* Glasplade bag tekst */
+/* Hero Container */
 .home-herocontainer {
   position: relative;
   max-width: 900px;
@@ -234,170 +205,57 @@
   text-shadow: none;
 }
 
-/* Mobile optimization */
+/* Hero Button - styling flyttet til assets/css/components/cta.css (Sektion 1) */
+
+/* Button Icon Styling */
+.hero-cta svg,
+.hero-cta i {
+  position: relative !important;
+  z-index: 2 !important;
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .home-hero {
-    padding: 70px 20px !important;
+    min-height: 60vh !important;
   }
 
   .home-herocontainer {
-    padding: 26px 22px !important;
+    margin: 24px !important;
+    padding: 36px 20px !important;
   }
 
   .home-herotitle {
-    font-size: clamp(28px, 8vw, 40px);
-    line-height: 1.1;
-    letter-spacing: -0.015em;
-    margin-bottom: 16px;
+    font-size: 2.1rem !important;
   }
 
   .home-herotext {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 24px;
+    font-size: 1rem !important;
+  }
+
+  .hero-cta {
+    padding: 12px 24px !important;
+    font-size: 0.95rem !important;
   }
 }
 
-/* Hero CTA Button - styling i assets/css/components/cta.css (Sektion 1) */
+@media (max-width: 480px) {
+  .home-hero {
+    min-height: 55vh !important;
+  }
 
-/* ---------- SERVICES (bilservice oversigt) ---------- */
-.services-hero {
-  position: relative;
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  max-width: 1400px !important;
-  margin: 0 auto 96px !important;
-  padding: clamp(110px, 18vw, 190px) clamp(22px, 4vw, 68px) !important;
-  border-radius: 22px !important;
-  overflow: hidden !important;
-  text-align: center !important;
-  min-height: auto !important;
+  .home-herocontainer {
+    margin: 16px !important;
+    padding: 32px 16px !important;
+  }
 
-  border: 1px solid #d8cec4 !important;
-  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.18),
-    inset 0 2px 0 rgba(255, 255, 255, 0.55),
-    inset 0 -10px 40px rgba(0, 0, 0, 0.06) !important;
-
-  background: radial-gradient(
-      700px 420px at 88% 6%,
-      rgba(255, 255, 255, 0.55),
-      rgba(255, 255, 255, 0) 65%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.96),
-      rgba(246, 238, 230, 0.92)
-    ),
-    radial-gradient(
-      1200px 680px at 85% -12%,
-      rgba(176, 0, 23, 0.1),
-      transparent 60%
-    ),
-    url("https://hodjaauto.alwaysdata.net/wp-content/uploads/2025/09/bilerservices-scaled.jpg") !important;
-  background-size: auto, auto, auto, cover !important;
-  background-position: center, center, 85% -10%, center !important;
-  background-repeat: no-repeat !important;
-  background-attachment: scroll, scroll, scroll, scroll !important;
+  .home-herotitle {
+    font-size: 1.75rem !important;
+  }
 }
-
-.services-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  mix-blend-mode: overlay;
-  background: repeating-linear-gradient(
-      125deg,
-      rgba(255, 255, 255, 0.05) 0 1px,
-      rgba(255, 255, 255, 0) 1px 18px
-    ),
-    radial-gradient(1200px 600px at 50% 0, rgba(0, 0, 0, 0.07), transparent 70%);
-  opacity: 0.22 !important;
-}
-
-.services-hero::after {
-  content: "";
-  position: absolute;
-  left: -20%;
-  right: -20%;
-  top: -54px;
-  height: 96px !important;
-
-  background: linear-gradient(90deg, #b00017, #d62a3a, #b00017);
-  background-size: 220% 100% !important;
-  filter: blur(26px) saturate(1.08) !important;
-  opacity: 0.26 !important;
-
-  clip-path: polygon(0 0, 100% 58%, 100% 100%, 0 100%) !important;
-
-  animation: hodjaLightSweep 13.5s linear infinite !important;
-}
-
-.services-herocontainer {
-  position: relative;
-  max-width: 900px;
-  padding: clamp(18px, 3vw, 28px) clamp(18px, 3vw, 32px);
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.62);
-  backdrop-filter: blur(6px) saturate(1.06);
-  border: 1px solid #d8cec4 !important;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.45) !important;
-  text-align: center !important;
-}
-
-.services-herocontainer::before {
-  content: "";
-  position: absolute;
-  left: 10px;
-  right: 10px;
-  top: 10px;
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0)
-  );
-  border-radius: 2px;
-  opacity: 0.7;
-}
-
-.services-herotitle {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter",
-    "Montserrat", sans-serif;
-  font-weight: 800;
-  font-size: clamp(32px, 6vw, 64px);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
-  color: #000000 !important;
-  margin: 0 0 20px;
-  padding: 0;
-  text-align: left;
-  max-width: 900px;
-  text-shadow: none;
-  position: relative;
-}
-
-.services-herotitle::after {
-  content: none;
-  display: none;
-}
-
-.services-herotext {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-weight: 400;
-  font-size: clamp(16px, 2.2vw, 20px);
-  line-height: 1.4;
-  letter-spacing: 0;
-  color: #333333 !important;
-  margin: 0 0 32px;
-  text-align: left;
-  max-width: 700px;
-  text-shadow: none;
-}
-
-/* Hero CTA Button - styling i assets/css/components/cta.css (Sektion 1) */
 
 /* ---------- SERVICEPAGE (enkelt service) ---------- */
 .servicepage-hero {
@@ -536,7 +394,142 @@
   text-shadow: none;
 }
 
-/* Hero CTA Button - styling i assets/css/components/cta.css (Sektion 1) */
+/* ---------- SERVICES (kategori/oversigt) ---------- */
+.services-hero {
+  position: relative;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  max-width: 1400px !important;
+  margin: 0 auto 96px !important;
+  padding: clamp(110px, 18vw, 190px) clamp(22px, 4vw, 68px) !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+  text-align: center !important;
+  min-height: auto !important;
+
+  border: 1px solid #d8cec4 !important;
+  box-shadow: 0 28px 72px rgba(0, 0, 0, 0.18),
+    inset 0 2px 0 rgba(255, 255, 255, 0.55),
+    inset 0 -10px 40px rgba(0, 0, 0, 0.06) !important;
+
+  background: radial-gradient(
+      700px 420px at 88% 6%,
+      rgba(255, 255, 255, 0.55),
+      rgba(255, 255, 255, 0) 65%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.96),
+      rgba(246, 238, 230, 0.92)
+    ),
+    radial-gradient(
+      1200px 680px at 85% -12%,
+      rgba(176, 0, 23, 0.1),
+      transparent 60%
+    ),
+    url("https://hodjaauto.alwaysdata.net/wp-content/uploads/2025/09/bilerservices-scaled.jpg") !important;
+  background-size: auto, auto, auto, cover !important;
+  background-position: center, center, 85% -10%, center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: scroll, scroll, scroll, scroll !important;
+}
+
+.services-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  background: repeating-linear-gradient(
+      125deg,
+      rgba(255, 255, 255, 0.05) 0 1px,
+      rgba(255, 255, 255, 0) 1px 18px
+    ),
+    radial-gradient(1200px 600px at 50% 0, rgba(0, 0, 0, 0.07), transparent 70%);
+  opacity: 0.22 !important;
+}
+
+.services-hero::after {
+  content: "";
+  position: absolute;
+  left: -20%;
+  right: -20%;
+  top: -54px;
+  height: 96px !important;
+
+  background: linear-gradient(90deg, #b00017, #d62a3a, #b00017);
+  background-size: 220% 100% !important;
+  filter: blur(26px) saturate(1.08) !important;
+  opacity: 0.26 !important;
+
+  clip-path: polygon(0 0, 100% 58%, 100% 100%, 0 100%) !important;
+
+  animation: hodjaLightSweep 13.5s linear infinite !important;
+}
+
+.services-herocontainer {
+  position: relative;
+  max-width: 900px;
+  padding: clamp(18px, 3vw, 28px) clamp(18px, 3vw, 32px);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(6px) saturate(1.06);
+  border: 1px solid #d8cec4 !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45) !important;
+  text-align: center !important;
+}
+
+.services-herocontainer::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: 10px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 2px;
+  opacity: 0.7;
+}
+
+.services-herotitle {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter",
+    "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: clamp(32px, 6vw, 64px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #000000 !important;
+  margin: 0 0 20px;
+  padding: 0;
+  text-align: left;
+  max-width: 900px;
+  text-shadow: none;
+  position: relative;
+}
+
+.services-herotitle::after {
+  content: none;
+  display: none;
+}
+
+.services-herotext {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-weight: 400;
+  font-size: clamp(16px, 2.2vw, 20px);
+  line-height: 1.4;
+  letter-spacing: 0;
+  color: #333333 !important;
+  margin: 0 0 32px;
+  text-align: left;
+  max-width: 700px;
+  text-shadow: none;
+}
 
 /* ---------- OM OS ---------- */
 .about-hero {
