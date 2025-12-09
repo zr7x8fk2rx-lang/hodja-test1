@@ -40,7 +40,7 @@ get_header();
                         gennemgang af bremser, væsker og sikkerhed.
                     </p>
                 </div>
-                <a class="cta-button services-cta" href="<?php echo esc_url(home_url('/bilservice/serviceeftersyn-vedligeholdelse/')); ?>">
+                <a class="services-cta" href="<?php echo esc_url(home_url('/bilservice/serviceeftersyn-vedligeholdelse/')); ?>">
                     Læs mere
                 </a>
             </article>
@@ -54,7 +54,7 @@ get_header();
                         Alt fra bremser, styretøj og udstødning til kobling og motorarbejde – kvalitet og garanti.
                     </p>
                 </div>
-                <a class="cta-button services-cta" href="<?php echo esc_url(home_url('/bilservice/bilreparationer/')); ?>">
+                <a class="services-cta" href="<?php echo esc_url(home_url('/bilservice/bilreparationer/')); ?>">
                     Læs mere
                 </a>
             </article>
@@ -68,7 +68,7 @@ get_header();
                         Avanceret fejlsøgning med diagnoseværktøj, el-reparationer og software-opdateringer.
                     </p>
                 </div>
-                <a class="cta-button services-cta" href="<?php echo esc_url(home_url('/bilservice/auto-el-fejlfinding/')); ?>">
+                <a class="services-cta" href="<?php echo esc_url(home_url('/bilservice/auto-el-fejlfinding/')); ?>">
                     Læs mere
                 </a>
             </article>
@@ -82,7 +82,7 @@ get_header();
                         Skift, afbalancering og opbevaring. Råd om de rigtige dæk til sæson og kørselsbehov.
                     </p>
                 </div>
-                <a class="cta-button services-cta" href="<?php echo esc_url(home_url('/bilservice/daek-faelge/')); ?>">
+                <a class="services-cta" href="<?php echo esc_url(home_url('/bilservice/daek-faelge/')); ?>">
                     Læs mere
                 </a>
             </article>
@@ -96,7 +96,7 @@ get_header();
                         Præcisionsdrejning og specialløsninger til komponenter og tilpasninger.
                     </p>
                 </div>
-                <a class="cta-button services-cta" href="<?php echo esc_url(home_url('/bilservice/drejearbejde/')); ?>">
+                <a class="services-cta" href="<?php echo esc_url(home_url('/bilservice/drejearbejde/')); ?>">
                     Læs mere
                 </a>
             </article>
@@ -110,7 +110,7 @@ get_header();
                         Vælg dato og tidspunkt – så klarer vi resten. Hurtigt svar og faste aftaler.
                     </p>
                 </div>
-                <a class="cta-button services-cta" href="<?php echo esc_url(home_url('/booking/')); ?>">
+                <a class="services-cta" href="<?php echo esc_url(home_url('/booking/')); ?>">
                     Book tid nu
                 </a>
             </article>

@@ -42,7 +42,7 @@ get_header();
                 Vores mekanikere står klar til at tage imod din bil. Du kan nemt booke en tid online, så klarer vi resten.
             </p>
 
-            <a class="cta-button" href="<?php echo esc_url(home_url('/booking/')); ?>">
+            <a class="services-cta" href="<?php echo esc_url(home_url('/booking/')); ?>">
                 Book dit service
             </a>
         </div>
@@ -50,7 +50,7 @@ get_header();
 </main>
 
 <?php get_footer(); ?> <div style="text-align:center; margin-top:40px;">
-    <a class="cta-button" href="<?php echo esc_url(home_url('/booking/')); ?>">
+    <a class="services-cta" href="<?php echo esc_url(home_url('/booking/')); ?>">
         Book service nu
     </a>
 </div>

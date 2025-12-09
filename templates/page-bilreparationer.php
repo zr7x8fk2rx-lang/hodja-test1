@@ -31,7 +31,7 @@ get_header();
                 <li>Fejlfinding og el-systemer</li>
             </ul>
 
-            <a href="<?php echo esc_url(home_url('/booking/')); ?>" class="cta-button">Få et tilbud</a>
+            <a href="<?php echo esc_url(home_url('/booking/')); ?>" class="services-cta">Få et tilbud</a>
 
             <h2 class="servicepage-heading">Gennemsigtighed og kvalitet</h2>
             <p class="servicepage-paragraph">Vi tror på ærlig kommunikation og høj kvalitet i vores arbejde. Du får altid et prisoverslag, inden vi går i gang – ingen ubehagelige overraskelser.</p>

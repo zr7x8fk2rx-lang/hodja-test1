@@ -31,7 +31,7 @@ get_header();
                 <li>Udskiftning af elektroniske komponenter</li>
             </ul>
 
-            <a href="<?php echo esc_url(home_url('/booking/')); ?>" class="cta-button">Book fejlfinding</a>
+            <a href="<?php echo esc_url(home_url('/booking/')); ?>" class="services-cta">Book fejlfinding</a>
 
             <h2 class="servicepage-heading">Moderne teknologi</h2>
             <p class="servicepage-paragraph">Vores værksted er udstyret med topmoderne diagnoseværktøj, så vi kan servicere selv de nyeste modeller og hybridbiler.</p>

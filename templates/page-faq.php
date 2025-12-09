@@ -6,7 +6,6 @@ get_header(); ?>
     <div class="servicepage-herocontainer">
         <h1 class="servicepage-herotitle">Ofte stillede spørgsmål</h1>
         <p class="servicepage-herotext">Find svar på de mest almindelige spørgsmål om service, garanti og booking.</p>
-        <a class="cta-button" href="<?php echo esc_url(home_url('/kontakt/')); ?>">Kontakt os</a>
     </div>
 </section>
 

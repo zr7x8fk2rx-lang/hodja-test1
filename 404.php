@@ -14,8 +14,8 @@ get_header(); ?>
             Ups! Den side, du leder efter, findes ikke. Den kan være flyttet, slettet eller aldrig eksisteret.
         </p>
         <div class="error-buttons">
-            <a href="<?php echo esc_url(home_url('/')); ?>" class="cta-button">Til forsiden</a>
-            <a href="<?php echo esc_url(home_url('/kontakt/')); ?>" class="cta-button">Kontakt os</a>
+            <a href="<?php echo esc_url(home_url('/')); ?>" class="services-cta">Til forsiden</a>
+            <a href="<?php echo esc_url(home_url('/kontakt/')); ?>" class="services-cta">Kontakt os</a>
         </div>
     </div>
 </section>

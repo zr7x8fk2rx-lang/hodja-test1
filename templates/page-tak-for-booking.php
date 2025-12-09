@@ -6,7 +6,6 @@ get_header(); ?>
     <div class="servicepage-herocontainer">
         <h1 class="servicepage-herotitle">Tak for din booking</h1>
         <p class="servicepage-herotext">Vi har modtaget din booking og kontakter dig hurtigst muligt.</p>
-        <a class="cta-button" href="<?php echo esc_url(home_url('/')); ?>">Til forsiden</a>
     </div>
 </section>
 

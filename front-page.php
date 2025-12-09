@@ -59,7 +59,7 @@ get_header(); ?>
                     <div class="services-content">
                         <p class="services-text">Producentkrav, stempler &amp; garanti bibeholdes.</p>
                     </div>
-                    <a class="services-cta cta-button" href="<?php echo esc_url(home_url('/bilservice/serviceeftersyn-vedligeholdelse/')); ?>">
+                    <a class="services-cta" href="<?php echo esc_url(home_url('/bilservice/serviceeftersyn-vedligeholdelse/')); ?>">
                         Læs mere
                     </a>
                 </article>
@@ -70,7 +70,7 @@ get_header(); ?>
                     <div class="services-content">
                         <p class="services-text">Bremser, udstødning, styretøj, kobling m.m.</p>
                     </div>
-                    <a class="services-cta cta-button" href="<?php echo esc_url(home_url('/bilservice/bilreparationer/')); ?>">
+                    <a class="services-cta" href="<?php echo esc_url(home_url('/bilservice/bilreparationer/')); ?>">
                         Læs mere
                     </a>
                 </article>
@@ -81,7 +81,7 @@ get_header(); ?>
                     <div class="services-content">
                         <p class="services-text">Diagnose, sensorer, ECU &amp; elektriske fejl.</p>
                     </div>
-                    <a class="services-cta cta-button" href="<?php echo esc_url(home_url('/bilservice/auto-el-fejlfinding/')); ?>">
+                    <a class="services-cta" href="<?php echo esc_url(home_url('/bilservice/auto-el-fejlfinding/')); ?>">
                         Læs mere
                     </a>
                 </article>
@@ -92,7 +92,7 @@ get_header(); ?>
                     <div class="services-content">
                         <p class="services-text">Dækskift, opbevaring, balancering &amp; hjulskift.</p>
                     </div>
-                    <a class="services-cta cta-button" href="<?php echo esc_url(home_url('/bilservice/daek-faelge/')); ?>">
+                    <a class="services-cta" href="<?php echo esc_url(home_url('/bilservice/daek-faelge/')); ?>">
                         Læs mere
                     </a>
                 </article>
@@ -103,7 +103,7 @@ get_header(); ?>
                     <div class="services-content">
                         <p class="services-text">Bremseskiver, tromler &amp; præcisionsslibning.</p>
                     </div>
-                    <a class="services-cta cta-button" href="<?php echo esc_url(home_url('/bilservice/drejearbejde/')); ?>">
+                    <a class="services-cta" href="<?php echo esc_url(home_url('/bilservice/drejearbejde/')); ?>">
                         Læs mere
                     </a>
                 </article>
@@ -114,7 +114,7 @@ get_header(); ?>
                     <div class="services-content">
                         <p class="services-text">Nemt og hurtigt – book din tid direkte online.</p>
                     </div>
-                    <a class="services-cta cta-button" href="<?php echo esc_url(home_url('/book-vaerkstedstid-online/')); ?>">
+                    <a class="services-cta" href="<?php echo esc_url(home_url('/book-vaerkstedstid-online/')); ?>">
                         Book nu
                     </a>
                 </article>

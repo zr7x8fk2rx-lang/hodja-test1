@@ -6,7 +6,6 @@ get_header(); ?>
     <div class="servicepage-herocontainer">
         <h1 class="servicepage-herotitle">Book værkstedstid online</h1>
         <p class="servicepage-herotext">Book hurtigt og nemt din tid – vi vender tilbage med bekræftelse.</p>
-        <a class="cta-button" href="<?php echo esc_url(home_url('/kontakt/')); ?>">Kontakt os</a>
     </div>
 </section>
 

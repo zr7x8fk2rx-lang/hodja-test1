@@ -18,7 +18,7 @@ get_header(); ?>
     <p>Alle data behandles fortroligt og slettes, når de ikke længere er nødvendige.</p>
 
     <div class="cta-row">
-        <a href="<?php echo esc_url(home_url('/kontakt/')); ?>" class="cta-button">Kontakt os</a>
+        <a href="<?php echo esc_url(home_url('/kontakt/')); ?>" class="services-cta">Kontakt os</a>
     </div>
 </section>
 

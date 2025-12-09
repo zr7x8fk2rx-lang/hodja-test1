@@ -31,7 +31,7 @@ get_header();
                 <li>Salg af kvalitetsdæk og fælge</li>
             </ul>
 
-            <a href="<?php echo esc_url(home_url('/booking/')); ?>" class="cta-button">Book dækskift</a>
+            <a href="<?php echo esc_url(home_url('/booking/')); ?>" class="services-cta">Book dækskift</a>
 
             <h2 class="servicepage-heading">Sikkerhed og komfort</h2>
             <p class="servicepage-paragraph">Vi sikrer korrekt dæktryk, slidbanedybde og montering, så du får den bedste køreoplevelse og maksimal sikkerhed – året rundt.</p>

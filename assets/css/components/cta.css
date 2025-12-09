@@ -222,27 +222,6 @@
    SEKTION 2: CONTENT CTA BUTTONS
    ========================================= */
 
-/* ---------- 2A. SERVICEPAGE CONTENT (.cta-button) ----------
-   Bruges på: Service undersider content sektioner
-   Reference: assets/css/pages/servicepage.css
-   ========================================= */
-.servicepage-section .cta-button {
-  display: inline-block;
-  background: #b00017;
-  color: #fff;
-  padding: clamp(0.75rem, 1.5vw, 0.875rem) clamp(1.5rem, 3vw, 2rem);
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s ease;
-  margin-top: clamp(20px, 3vw, 30px);
-  font-size: clamp(0.95rem, 2vw, 1.0625rem);
-}
-
-.servicepage-section .cta-button:hover {
-  background: #8b0012;
-}
-
 /* ---------- 2B. BOOKING BUTTON (.booking-button) ----------
    Bruges på: Booking sektioner, Call-to-action områder
    Reference: front-page.php, page-kontakt.php
@@ -279,4 +258,9 @@
   text-decoration: none;
   border-bottom: 1px solid rgba(176, 0, 23, 0.3);
   transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.services-cta:focus {
+  outline: 3px solid rgba(176, 0, 23, 0.4);
+  outline-offset: 4px;
 }

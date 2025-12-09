@@ -31,7 +31,7 @@ get_header();
                 <li>Finjustering af tolerancer</li>
             </ul>
 
-            <a href="<?php echo esc_url(home_url('/booking/')); ?>" class="cta-button">Få et tilbud</a>
+            <a href="<?php echo esc_url(home_url('/booking/')); ?>" class="services-cta">Få et tilbud</a>
 
             <h2 class="servicepage-heading">Hvorfor vælge os?</h2>
             <p class="servicepage-paragraph">Direkte sparring med mekanikerne, så løsningen passer 1:1 til bilen – ikke et standardkompromis.</p>

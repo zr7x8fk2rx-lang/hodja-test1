@@ -1,10 +1,37 @@
 /* =========================================
-   FRONT-PAGE - Flydende & Professionelt Design
+   FRONT-PAGE - GLOBAL STYLES
 ========================================= */
+
+@import url("../base/_vars.css");
 
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding-top: 96px;
+  padding-bottom: 96px;
+}
+
+/* Alternating section backgrounds for scannability */
+.usp-section {
+  background: #f7f7f7;
+}
+.services-section {
+  background: #ffffff;
+}
+.booking-cta {
+  background: #f7f7f7;
+}
+.contact-form-section {
+  background: #ffffff;
 }
 
 /* Section transitions - fade in on scroll */
@@ -36,157 +63,22 @@ html {
   );
 }
 
-/* ================================
-   1. HERO SECTION
-   All .home-hero styling is in assets/css/components/hero.css
-   ================================ */
-
-/* ================================
-   CTA Button Styling Reference
-/* All CTA button styles (.hero-cta, .booking-button, .services-cta, .cta-button)
-   are defined in assets/css/components/cta.css
-   ================================ */
-
-/* =========================================
-   Global layout & section spacing
-   ========================================= */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-}
-
-section {
-  padding-top: 96px;
-  padding-bottom: 96px;
-}
-
-/* Alternating section backgrounds for scannability */
-.usp-section {
-  background: #f7f7f7;
-}
-.services-section {
-  background: #ffffff;
-}
-.booking-cta {
-  background: #f7f7f7;
-}
-.contact-form-section {
-  background: #ffffff;
-}
-
 /* Ensure clear spacing under section headings */
 .services-heading,
 .contact-form-title {
   margin-bottom: 40px;
 }
 
-/* =========================================
-   USP grid – responsive cards
-   ========================================= */
-.usp-section {
-  padding-top: 80px;
-  padding-bottom: 80px;
-}
-.usp-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
+/* ================================
+  CTA Button Styling Reference
+  All CTA button styles (.hero-cta, .booking-button, .services-cta)
+   are defined in assets/css/components/cta.css
+   ================================ */
 
-@media (max-width: 1024px) {
-  .usp-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 600px) {
-  .usp-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-.usp-item {
-  background: #ffffff;
-  border: 1px solid #e5e0da;
-  border-radius: 8px;
-  padding: 20px;
-  text-align: center;
-}
-
-.usp-icon {
-  width: 48px;
-  height: 48px;
-  font-size: 22px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 999px;
-  background: #ffffff;
-  border: 1px solid rgba(176, 0, 23, 0.4);
-  color: #b00017;
-  margin-bottom: 12px;
-}
-
-.usp-item h3 {
-  font-size: 18px;
-  margin: 0 0 6px;
-}
-.usp-item p {
-  font-size: 16px;
-  margin: 0;
-  color: #333333;
-}
-
-/* =========================================
-   Services cards – responsive grid
-   ========================================= */
-.services-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-@media (max-width: 1024px) {
-  .services-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 640px) {
-  .services-container {
-    grid-template-columns: 1fr;
-  }
-}
-
-.services-box {
-  background: #ffffff;
-  border: 1px solid #e5e0da;
-  border-radius: 8px;
-  padding: 24px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.services-box:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
-}
-.services-title {
-  font-size: 20px;
-  margin: 0 0 8px;
-  color: #000;
-}
-.services-text {
-  font-size: 16px;
-  color: #333;
-  margin: 0 0 16px;
-}
-.services-cta {
-  margin-top: auto;
-  display: inline-block;
-  font-weight: 700;
-  color: #b00017;
-}
+/* ================================
+   1. HERO SECTION
+   All .home-hero styling is in assets/css/components/hero.css
+   ================================ */
 
 /* =========================================
    2. USP SECTION – CINEMATIC BADGES (små, 3D, rød glow + glans)
@@ -241,11 +133,6 @@ section {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* Cinematic rød glow bag pillen - fjernet */
-.usp-item::before {
-  content: none;
-}
-
 /* Top-glans (tynd highlight) */
 .usp-item::after {
   content: "";
@@ -296,18 +183,6 @@ section {
   margin: 2px 0 0;
   font-size: 13px;
   color: #5f544c;
-}
-
-/* Mobil – én per række */
-@media (max-width: 768px) {
-  .usp-section {
-    margin: 16px auto 60px;
-    padding: 0 16px;
-  }
-
-  .usp-item {
-    min-width: 100%;
-  }
 }
 
 /* =========================================
@@ -494,14 +369,14 @@ section {
   margin-bottom: 24px;
 }
 
-/* SECTION 5: Reference guide for component-specific styling */
 /* NOTE: .ff-form-wrapper styling → assets/css/forms/ff-form.css */
 /* NOTE: .acf-info-wrapper styling → assets/css/forms/acf-info.css */
 
 /* =========================================
-   GLOBAL CINEMATIC SURFACE – GLAS-KORT
+   GLOBAL EFFECTS - Cinematic surface & responsive
    ========================================= */
 
+/* CINEMATIC SURFACE – GLAS-KORT */
 @supports (backdrop-filter: blur(4px)) {
   .services-box,
   .ff-form-wrapper {
@@ -520,9 +395,13 @@ section {
   }
 }
 
-/* =========================================
-   RESPONSIVE FINPUDSNING
-   ========================================= */
+/* Better focus states for accessibility */
+.usp-item:focus-within {
+  outline: 3px solid rgba(176, 0, 23, 0.4);
+  outline-offset: 4px;
+}
+
+/* RESPONSIVE FINPUDSNING */
 @media (max-width: 768px) {
   .usp-section,
   .services-section {
@@ -534,13 +413,10 @@ section {
   .ff-form-wrapper {
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
   }
-}
 
-/* Better focus states for accessibility */
-.services-cta:focus,
-.usp-item:focus-within {
-  outline: 3px solid rgba(176, 0, 23, 0.4);
-  outline-offset: 4px;
+  .usp-item {
+    min-width: 100%;
+  }
 }
 
 /* Improved responsive flow */

@@ -6,7 +6,6 @@ get_header(); ?>
     <div class="servicepage-herocontainer">
         <h1 class="servicepage-herotitle">Om Hodja Auto</h1>
         <p class="servicepage-herotext">Vi er et professionelt autoværksted og skadecenter i Taastrup – med fokus på kvalitet, gennemsigtighed og god service.</p>
-        <a class="cta-button" href="<?php echo esc_url(home_url('/kontakt/')); ?>">Kontakt os</a>
     </div>
 </section>
 
