@@ -4,36 +4,61 @@
 ========================================= */
 
 /* =========================================
-   1. HERO BUTTON – .home-herobutton
-   Stor rød button til hero sektion (forside)
+   1. HERO CTA – .hero-cta
+   Standard hero button styling til alle hero sections
+   Bruges på: Forside, Bilservice, og andre hero sektioner
 ========================================= */
-.home-herobutton {
-  display: inline-block;
-  padding: 16px 40px;
-  border-radius: 12px;
-  color: #fff !important;
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: clamp(16px, 2vw, 24px);
+  padding: clamp(12px, 1.8vw, 16px) clamp(24px, 3.5vw, 32px);
+  font-size: clamp(14px, 1.6vw, 16px);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: clamp(8px, 1vw, 12px);
   text-decoration: none;
-  font-weight: 800;
-  font-size: 18px;
-  letter-spacing: 0.01em;
-  border: 1px solid #900014 !important;
-  background: linear-gradient(180deg, #e63b49 0%, #b00017 85%) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.38),
-    0 16px 42px rgba(176, 0, 23, 0.36) !important;
-  transition: transform 0.15s ease, box-shadow 0.25s ease, filter 0.25s ease !important;
+  backdrop-filter: blur(15px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(176, 0, 23, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  opacity: 1;
 }
 
-.home-herobutton:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.08) saturate(1.08);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42),
-    0 24px 60px rgba(176, 0, 23, 0.44) !important;
+.hero-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: left 0.6s ease;
 }
 
-.home-herobutton:active {
-  transform: translateY(0);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3),
-    0 12px 28px rgba(176, 0, 23, 0.28) !important;
+.hero-cta:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(176, 0, 23, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.hero-cta:hover::before {
+  left: 100%;
 }
 
 /* =========================================

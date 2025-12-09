@@ -15,7 +15,7 @@ get_header(); ?>
         <div class="home-herocontainer">
             <h1 class="home-herotitle">Dit lokale autoværksted i Taastrup</h1>
             <p class="home-herotext">Professionel service, erfarne mekanikere og konkurrencedygtige priser. Vi holder din bil kørende – uden at tømme din tegnebog.</p>
-            <a class="home-herobutton" href="<?php echo esc_url(home_url('/book-vaerkstedstid-online/')); ?>">Book tid online</a>
+            <a class="hero-cta" href="<?php echo esc_url(home_url('/book-vaerkstedstid-online/')); ?>">Book tid online</a>
         </div>
     </section>
 
