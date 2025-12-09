@@ -20,7 +20,7 @@ get_header();
                 Professionelt autoværksted &amp; skadecenter – service på alle bilmærker.
                 Moderne diagnoseudstyr, fair priser og gennemsigtighed.
             </p>
-            <a class="cta-button" href="<?php echo esc_url(home_url('/booking/')); ?>">
+            <a class="home-herobutton" href="<?php echo esc_url(home_url('/booking/')); ?>">
                 Book værkstedstid
             </a>
         </div>
