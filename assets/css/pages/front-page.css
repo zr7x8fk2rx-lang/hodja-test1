@@ -489,77 +489,6 @@ section {
 }
 
 /* =========================================
-   4. BOOKING CTA BAND
-   ========================================= */
-.booking-cta {
-  text-align: center;
-  padding-top: 64px;
-  padding-bottom: 64px;
-}
-.booking-cta .btn-primary {
-  font-size: 18px;
-}
-
-/* =========================================
-   5. CONTACT SECTION - Skriv til os
-   Two column grid: Form + Contact Info
-   
-   Wrapper Styling References:
-   - .ff-form-wrapper styling → assets/css/forms/ff-form.css
-   - .acf-info-wrapper styling → assets/css/forms/acf-info.css
-   - .contact-grid base layout → here (front-page.css)
-   ========================================= */
-.contact-form-section {
-  padding-top: 80px;
-  padding-bottom: 100px;
-}
-
-/* Contact Grid - Base Layout */
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-items: start;
-}
-
-@media (max-width: 900px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.contact-col-header {
-  margin-bottom: 24px;
-}
-
-/* SECTION 5: Reference guide for component-specific styling */
-/* NOTE: .ff-form-wrapper styling → assets/css/forms/ff-form.css */
-/* NOTE: .acf-info-wrapper styling → assets/css/forms/acf-info.css */
-
-
-/* =========================================
-   GLOBAL CINEMATIC SURFACE – GLAS-KORT
-   ========================================= */
-
-@supports (backdrop-filter: blur(4px)) {
-  .services-box,
-  .ff-form-wrapper {
-    background: rgba(255, 255, 255, 0.82);
-    backdrop-filter: blur(4px) saturate(1.05);
-    -webkit-backdrop-filter: blur(4px) saturate(1.05);
-  }
-}
-
-/* fallback hvis browser IKKE understøtter blur */
-@supports not (backdrop-filter: blur(4px)) {
-  .services-box,
-  .ff-form-wrapper {
-    background: #ffffff;
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
-  }
-}
-
-/* =========================================
    2. USP SECTION – CINEMATIC BADGES (små, 3D, rød glow + glans)
    ========================================= */
 
@@ -825,6 +754,76 @@ section {
 .services-cta {
   display: inline-block;
   margin-top: 8px;
+}
+
+/* =========================================
+   4. BOOKING CTA BAND
+   ========================================= */
+.booking-cta {
+  text-align: center;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+.booking-cta .btn-primary {
+  font-size: 18px;
+}
+
+/* =========================================
+   5. CONTACT SECTION - Skriv til os
+   Two column grid: Form + Contact Info
+
+   Wrapper Styling References:
+   - .ff-form-wrapper styling → assets/css/forms/ff-form.css
+   - .acf-info-wrapper styling → assets/css/forms/acf-info.css
+   - .contact-grid base layout → here (front-page.css)
+   ========================================= */
+.contact-form-section {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+/* Contact Grid - Base Layout */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-col-header {
+  margin-bottom: 24px;
+}
+
+/* SECTION 5: Reference guide for component-specific styling */
+/* NOTE: .ff-form-wrapper styling → assets/css/forms/ff-form.css */
+/* NOTE: .acf-info-wrapper styling → assets/css/forms/acf-info.css */
+
+/* =========================================
+   GLOBAL CINEMATIC SURFACE – GLAS-KORT
+   ========================================= */
+
+@supports (backdrop-filter: blur(4px)) {
+  .services-box,
+  .ff-form-wrapper {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(4px) saturate(1.05);
+    -webkit-backdrop-filter: blur(4px) saturate(1.05);
+  }
+}
+
+/* fallback hvis browser IKKE understøtter blur */
+@supports not (backdrop-filter: blur(4px)) {
+  .services-box,
+  .ff-form-wrapper {
+    background: #ffffff;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  }
 }
 
 /* =========================================

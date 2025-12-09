@@ -142,49 +142,49 @@ add_action('wp_enqueue_scripts', function () {
         }
     }
 
-        // 📇 Kontakt side - hero, kontakt sektion og formularer
-        if (is_page_template('templates/page-kontakt.php') || is_page('kontakt')) {
-            // Hero CSS
-            $hero_css = $theme_dir . '/assets/css/components/hero.css';
-            if (file_exists($hero_css)) {
-                wp_enqueue_style(
-                    'hodja-hero',
-                    $theme_uri . '/assets/css/components/hero.css',
-                    ['hodja-global'],
-                    filemtime($hero_css)
-                );
-            }
+    // 📇 Kontakt side - hero, kontakt sektion og formularer
+    if (is_page_template('templates/page-kontakt.php') || is_page('kontakt')) {
+        // Hero CSS
+        $hero_css = $theme_dir . '/assets/css/components/hero.css';
+        if (file_exists($hero_css)) {
+            wp_enqueue_style(
+                'hodja-hero',
+                $theme_uri . '/assets/css/components/hero.css',
+                ['hodja-global'],
+                filemtime($hero_css)
+            );
+        }
 
-            $contact_css = $theme_dir . '/assets/css/sections/contact.css';
-            if (file_exists($contact_css)) {
-                wp_enqueue_style(
-                    'hodja-contact',
-                    $theme_uri . '/assets/css/sections/contact.css',
-                    ['hodja-global'],
-                    filemtime($contact_css)
-                );
-            }
+        $contact_css = $theme_dir . '/assets/css/sections/contact.css';
+        if (file_exists($contact_css)) {
+            wp_enqueue_style(
+                'hodja-contact',
+                $theme_uri . '/assets/css/sections/contact.css',
+                ['hodja-global'],
+                filemtime($contact_css)
+            );
+        }
 
-            $ff_form_css = $theme_dir . '/assets/css/forms/ff-form.css';
-            if (file_exists($ff_form_css)) {
-                wp_enqueue_style(
-                    'hodja-ff-form',
-                    $theme_uri . '/assets/css/forms/ff-form.css',
-                    ['hodja-global'],
-                    filemtime($ff_form_css)
-                );
-            }
+        $ff_form_css = $theme_dir . '/assets/css/forms/ff-form.css';
+        if (file_exists($ff_form_css)) {
+            wp_enqueue_style(
+                'hodja-ff-form',
+                $theme_uri . '/assets/css/forms/ff-form.css',
+                ['hodja-global'],
+                filemtime($ff_form_css)
+            );
+        }
 
-            $acf_info_css = $theme_dir . '/assets/css/forms/acf-info.css';
-            if (file_exists($acf_info_css)) {
-                wp_enqueue_style(
-                    'hodja-acf-info',
-                    $theme_uri . '/assets/css/forms/acf-info.css',
-                    ['hodja-global'],
-                    filemtime($acf_info_css)
-                );
-            }
-        }    // 🏠 Front-page (forside) CSS
+        $acf_info_css = $theme_dir . '/assets/css/forms/acf-info.css';
+        if (file_exists($acf_info_css)) {
+            wp_enqueue_style(
+                'hodja-acf-info',
+                $theme_uri . '/assets/css/forms/acf-info.css',
+                ['hodja-global'],
+                filemtime($acf_info_css)
+            );
+        }
+    }    // 🏠 Front-page (forside) CSS
     if (is_front_page()) {
         // Hero CSS
         $hero_css = $theme_dir . '/assets/css/components/hero.css';
