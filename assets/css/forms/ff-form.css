@@ -3,6 +3,31 @@
    Bruges til alle Fluent Forms på sitet
 ========================================= */
 
+/* FF Form Wrapper Container */
+.ff-form-wrapper {
+  position: relative;
+  padding: 28px 24px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff, #f7f0e8);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+.ff-form-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 18px;
+  width: 100px;
+  height: 25px;
+  background-image: url("https://hodjaauto.alwaysdata.net/wp-content/uploads/2025/12/streg.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+}
+
 /* =========================================
    FORM 11 - KONTAKTFORMULAR (FRONT-PAGE)
 ========================================= */
