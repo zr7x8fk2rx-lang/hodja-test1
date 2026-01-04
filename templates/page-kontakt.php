@@ -10,39 +10,36 @@ get_header(); ?>
 
 <main id="main" class="site-main">
 
-    <!-- HERO uden CTA -->
-    <section class="about-hero">
-        <div class="about-herocontainer">
-            <h1 class="about-herotitle">Kontakt os</h1>
-            <p class="about-herotext">Vi er klar til at hjælpe med spørgsmål, booking og tilbud.</p>
+    <!-- HERO -->
+    <section class="servicepage-hero">
+        <div class="servicepage-herocontainer">
+            <h1 class="servicepage-herotitle">Kontakt os</h1>
+            <p class="servicepage-herotext">Vi er klar til at hjælpe med spørgsmål, booking og tilbud.</p>
         </div>
     </section>
 
-    <section class="kontakt-section">
-        <div class="kontakt-container">
-
-            <!-- Overskrifter side om side -->
-            <div class="kontakt-titles">
-                <h2 class="contact-form-title">Skriv til os</h2>
-                <h2 class="contact-title">Kontaktoplysninger</h2>
-            </div>
-
-            <div class="kontakt-grid">
-
-                <!-- Venstre kolonne: Formular -->
-                <div class="kontakt-col kontakt-form">
-                    <p class="contact-form-subtitle">Har du spørgsmål eller brug for hjælp? Skriv til os – vi vender hurtigt tilbage.</p>
-
-                    <?php echo do_shortcode('[fluentform id="13"]'); ?>
+    <!-- KONTAKTFORMULAR -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-col contact-col--form">
+                    <div class="contact-col-header">
+                        <h2 class="contact-form-title">Skriv til os</h2>
+                        <p class="contact-form-subtitle">Har du spørgsmål eller brug for hjælp? Send os en besked, så vender vi tilbage hurtigst muligt.</p>
+                    </div>
+                    <div class="ff-form-wrapper">
+                        <?php echo do_shortcode('[fluentform id="13"]'); ?>
+                    </div>
                 </div>
-
-                <!-- Højre kolonne: Kontaktinfo -->
-                <div class="kontakt-col kontakt-info">
-                    <p class="contact-form-subtitle">Find os her – vi ser frem til at høre fra dig.</p>
-
-                    <?php echo do_shortcode('[hodja_contact_info hide_email="true"]'); ?>
+                <div class="contact-col contact-col--info">
+                    <div class="contact-col-header">
+                        <h2 class="contact-form-title">Kontaktoplysninger</h2>
+                        <p class="contact-form-subtitle">Find os her – <br>vi er klar til at hjælpe dig.</p>
+                    </div>
+                    <div class="acf-info-wrapper">
+                        <?php get_template_part('templates/partials/acf-info'); ?>
+                    </div>
                 </div>
-
             </div>
         </div>
     </section>

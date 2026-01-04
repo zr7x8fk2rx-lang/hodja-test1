@@ -34,53 +34,47 @@ $maps_url = $maps_address ? 'https://www.google.com/maps/search/' . urlencode($m
 ?>
 
 <?php if ($telefon): ?>
-    <div class="contact-card contact-card--telefon">
+    <a href="tel:<?php echo esc_attr($telefon_href); ?>" class="contact-card contact-card--telefon">
         <div class="contact-card-header">
             <span class="contact-icon">📞</span>
             <span class="contact-card-title">Telefon</span>
         </div>
         <div class="contact-card-text">
-            <a class="contact-card-link" href="tel:<?php echo esc_attr($telefon_href); ?>">
-                <?php echo esc_html($telefon); ?>
-            </a>
+            <?php echo esc_html($telefon); ?>
         </div>
-    </div>
+    </a>
 <?php endif; ?>
 
 <?php
 global $hodja_hide_email;
 if ($email && !$hodja_hide_email):
 ?>
-    <div class="contact-card contact-card--email">
+    <a href="mailto:<?php echo esc_attr($email); ?>" class="contact-card contact-card--email">
         <div class="contact-card-header">
             <span class="contact-icon">✉️</span>
             <span class="contact-card-title">Email</span>
         </div>
         <div class="contact-card-text">
-            <a class="contact-card-link" href="mailto:<?php echo esc_attr($email); ?>">
-                <?php echo esc_html($email); ?>
-            </a>
+            <?php echo esc_html($email); ?>
         </div>
-    </div>
+    </a>
 <?php endif; ?>
 
 <?php if ($maps_url): ?>
-    <div class="contact-card contact-card--adresse">
+    <a href="<?php echo esc_url($maps_url); ?>" target="_blank" rel="noopener" class="contact-card contact-card--adresse">
         <div class="contact-card-header">
             <span class="contact-icon">📍</span>
             <span class="contact-card-title">Adresse</span>
         </div>
         <div class="contact-card-text">
-            <a class="contact-card-link" href="<?php echo esc_url($maps_url); ?>" target="_blank" rel="noopener">
-                <?php if ($adresse): ?>
-                    <?php echo esc_html($adresse); ?><br>
-                <?php endif; ?>
-                <?php if ($postnummer || $by): ?>
-                    <?php echo esc_html(trim((string)$postnummer . ' ' . (string)$by)); ?>
-                <?php endif; ?>
-            </a>
+            <?php if ($adresse): ?>
+                <?php echo esc_html($adresse); ?><br>
+            <?php endif; ?>
+            <?php if ($postnummer || $by): ?>
+                <?php echo esc_html(trim((string)$postnummer . ' ' . (string)$by)); ?>
+            <?php endif; ?>
         </div>
-    </div>
+    </a>
 <?php endif; ?>
 
 <?php if ($aabningstider): ?>

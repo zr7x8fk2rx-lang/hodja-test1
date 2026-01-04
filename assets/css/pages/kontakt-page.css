@@ -1,1 +1,103 @@
-/* Kontakt-page CSS er tømt efter flytning til front-page.css */
+/* =========================================
+   KONTAKT PAGE - Tydelige farver og layout
+   ========================================= */
+
+.contact-form-section {
+  padding-top: 80px;
+  padding-bottom: 100px;
+}
+
+.contact-form-section {
+  max-width: 1400px;
+  margin: 0 auto 80px;
+  padding: 50px clamp(22px, 4vw, 40px);
+  position: relative;
+  background: radial-gradient(
+    ellipse 800px 400px at 50% 0%,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(247, 240, 232, 0.35) 100%
+  );
+  border-radius: 28px;
+  border: 1px solid rgba(216, 206, 196, 0.5);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.03),
+    inset 0 2px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(176, 0, 23, 0.04);
+}
+
+.contact-form-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  pointer-events: none;
+  background: radial-gradient(
+      circle at 80% 20%,
+      rgba(176, 0, 23, 0.04) 0%,
+      transparent 50%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.008) 3px,
+      rgba(0, 0, 0, 0.008) 4px
+    );
+  opacity: 0.5;
+}
+
+.contact-form-title {
+  font-size: clamp(28px, 5vw, 38px);
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 16px;
+  letter-spacing: -0.04em;
+  background: linear-gradient(
+    135deg,
+    var(--text) 0%,
+    var(--hodja-red) 50%,
+    var(--text) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+.contact-form-subtitle {
+  margin: 0 0 32px;
+  font-size: 16px;
+  color: var(--text-light);
+  text-align: center;
+}
+
+/* Contact Grid - Base Layout */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.contact-col {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.contact-col-header {
+  margin-bottom: 24px;
+}
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-form-section {
+    margin: 30px auto 90px;
+    padding: 0 16px;
+  }
+}
