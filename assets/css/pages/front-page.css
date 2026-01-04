@@ -342,21 +342,93 @@ section {
    Two column grid: Form + Contact Info
 
    Wrapper Styling References:
-   - .ff-form-wrapper styling → assets/css/forms/ff-form.css
-   - .acf-info-wrapper styling → assets/css/forms/acf-info.css
-   - .contact-grid base layout → here (front-page.css)
+   - Form styling → assets/css/forms/ff-form.css or acf-info.css
+   - Contact grid layout → here (front-page.css)
    ========================================= */
 .contact-form-section {
   padding-top: 80px;
   padding-bottom: 100px;
 }
 
+/* Forside kontaktsektion – layout og dekorationer */
+body.home .contact-form-section {
+  max-width: 1400px;
+  margin: 0 auto 80px;
+  padding: 50px clamp(22px, 4vw, 40px);
+  position: relative;
+  background: radial-gradient(
+    ellipse 800px 400px at 50% 0%,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(247, 240, 232, 0.35) 100%
+  );
+  border-radius: 28px;
+  border: 1px solid rgba(216, 206, 196, 0.5);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.03),
+    inset 0 2px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(176, 0, 23, 0.04);
+}
+
+body.home .contact-form-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  pointer-events: none;
+  background: radial-gradient(
+      circle at 80% 20%,
+      rgba(176, 0, 23, 0.04) 0%,
+      transparent 50%
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.008) 3px,
+      rgba(0, 0, 0, 0.008) 4px
+    );
+  opacity: 0.5;
+}
+
+body.home .contact-form-title {
+  font-size: clamp(28px, 5vw, 38px);
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 16px;
+  letter-spacing: -0.04em;
+  background: linear-gradient(
+    135deg,
+    var(--text) 0%,
+    var(--hodja-red) 50%,
+    var(--text) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+}
+
+body.home .contact-form-subtitle {
+  margin: 0 0 32px;
+  font-size: 16px;
+  color: var(--text-light);
+  text-align: center;
+}
+
+/* Form-specific header hiding is handled in form stylesheets */
+
 /* Contact Grid - Base Layout */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 32px;
-  align-items: start;
+  align-items: stretch;
+}
+
+.contact-col {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 @media (max-width: 900px) {
@@ -365,21 +437,24 @@ section {
   }
 }
 
+@media (max-width: 768px) {
+  body.home .contact-form-section {
+    margin: 30px auto 90px;
+    padding: 0 16px;
+  }
+}
+
 .contact-col-header {
   margin-bottom: 24px;
 }
-
-/* NOTE: .ff-form-wrapper styling → assets/css/forms/ff-form.css */
-/* NOTE: .acf-info-wrapper styling → assets/css/forms/acf-info.css */
 
 /* =========================================
    GLOBAL EFFECTS - Cinematic surface & responsive
    ========================================= */
 
-/* CINEMATIC SURFACE – GLAS-KORT */
+/* CINEMATIC SURFACE – GLAS-KORT (services) */
 @supports (backdrop-filter: blur(4px)) {
-  .services-box,
-  .ff-form-wrapper {
+  .services-box {
     background: rgba(255, 255, 255, 0.82);
     backdrop-filter: blur(4px) saturate(1.05);
     -webkit-backdrop-filter: blur(4px) saturate(1.05);
@@ -388,8 +463,7 @@ section {
 
 /* fallback hvis browser IKKE understøtter blur */
 @supports not (backdrop-filter: blur(4px)) {
-  .services-box,
-  .ff-form-wrapper {
+  .services-box {
     background: #ffffff;
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
   }

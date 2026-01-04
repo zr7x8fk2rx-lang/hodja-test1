@@ -294,11 +294,11 @@
       rgba(176, 0, 23, 0.1),
       transparent 60%
     ),
-    url("https://hodjaauto.alwaysdata.net/wp-content/uploads/2025/09/bilerservices-scaled.jpg") !important;
+    url("https://hodjaauto.alwaysdata.net/wp-content/uploads/2025/11/forside.png") !important;
   background-size: auto, auto, auto, cover !important;
-  background-position: center, center, 85% -10%, center !important;
+  background-position: center, center, 85% -10%, var(--hero-focal) !important;
   background-repeat: no-repeat !important;
-  background-attachment: scroll, scroll, scroll, scroll !important;
+  background-attachment: scroll, scroll, scroll, fixed !important;
 }
 
 .services-hero::before {

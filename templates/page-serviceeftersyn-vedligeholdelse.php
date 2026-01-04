@@ -32,32 +32,21 @@ get_header();
                 Et typisk eftersyn omfatter skift af olie og filter, gennemgang af bremser, styring, væsker og elektronik. Du får altid et overblik over arbejdet og en fair pris før vi går i gang.
             </p>
 
+            <ul class="servicepage-list">
+                <li>Skifte af olie og filter</li>
+                <li>Kontrol af bremser og bremsevæske</li>
+                <li>Gennemgang af kølesystem og væsker</li>
+                <li>Kontrol af elektronik og sensorer</li>
+            </ul>
+
+            <a href="<?php echo esc_url(home_url('/booking/')); ?>" class="services-cta">Book dit service</a>
+
             <h2 class="servicepage-heading">Garanti og dokumentation</h2>
             <p class="servicepage-paragraph">
-                Vi stemplet din servicebog og bevarer din fabriksgaranti. Alt udføres efter forskrifterne for netop dit bilmærke og model.
+                Vi stempler din servicebog og bevarer din fabriksgaranti. Alt udføres efter forskrifterne for netop dit bilmærke og model.
             </p>
-
-            <h2 class="servicepage-heading">Book tid i dag</h2>
-            <p class="servicepage-paragraph">
-                Vores mekanikere står klar til at tage imod din bil. Du kan nemt booke en tid online, så klarer vi resten.
-            </p>
-
-            <a class="services-cta" href="<?php echo esc_url(home_url('/booking/')); ?>">
-                Book dit service
-            </a>
         </div>
     </section>
 </main>
 
-<?php get_footer(); ?> <div style="text-align:center; margin-top:40px;">
-    <a class="services-cta" href="<?php echo esc_url(home_url('/booking/')); ?>">
-        Book service nu
-    </a>
-</div>
-</div>
-</section>
-
-</main>
-
-<?php
-get_footer();
+<?php get_footer(); ?>

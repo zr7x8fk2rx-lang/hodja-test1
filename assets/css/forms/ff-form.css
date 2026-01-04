@@ -5,6 +5,48 @@
 
 /* FF Form Wrapper Container */
 .ff-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 28px 24px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ffffff, #f7f0e8);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  flex: 1;
+}
+
+.ff-form-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 25px;
+  background-image: url("https://hodjaauto.alwaysdata.net/wp-content/uploads/2025/12/streg.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  z-index: 10;
+}
+/* CINEMATIC SURFACE – GLAS-KORT (blur + fallback) */
+@supports (backdrop-filter: blur(4px)) {
+  .ff-form-wrapper {
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(4px) saturate(1.05);
+    -webkit-backdrop-filter: blur(4px) saturate(1.05);
+  }
+}
+
+/* =========================================
+   FORSIDE OVERRIDES (body.home)
+   FF wrapper tweaks på forsiden
+========================================= */
+body.home .ff-form-wrapper {
+  display: flex;
+  flex-direction: column;
   position: relative;
   padding: 28px 24px;
   border-radius: 18px;
@@ -14,23 +56,33 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
-.ff-form-wrapper::before {
+body.home .ff-form-wrapper::before {
   content: "";
-  position: absolute;
-  left: 28px;
-  top: 18px;
-  width: 100px;
-  height: 25px;
-  background-image: url("https://hodjaauto.alwaysdata.net/wp-content/uploads/2025/12/streg.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  body.home .ff-form-wrapper {
+    padding: 22px 18px 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+}
+
+@supports not (backdrop-filter: blur(4px)) {
+  .ff-form-wrapper {
+    background: #ffffff;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  }
 }
 
 /* =========================================
    FORM 11 - KONTAKTFORMULAR (FRONT-PAGE)
 ========================================= */
+
+/* Hide form title/subtitle (Form 11) */
+#fluentform_11 .ff-form-title,
+#fluentform_11 .ff-form-subtitle {
+  display: none !important;
+}
 
 /* Form Container */
 .ff-form-wrapper #fluentform_11,
@@ -38,10 +90,9 @@
   text-align: left;
   margin: 0 !important;
   padding: 0 !important;
-}
-
-.ff-form-wrapper .ff-el-group:first-child {
-  margin-top: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 0 !important;
 }
 
 /* Form Fields - Moderne input styling */
@@ -55,7 +106,7 @@
 .ff-form-wrapper input[type="tel"],
 .ff-form-wrapper textarea {
   width: 100%;
-  padding: 16px 20px;
+  padding: 18px 22px;
   font-size: 1rem;
   border: 2px solid rgba(0, 0, 0, 0.08);
   border-radius: 12px;
@@ -83,9 +134,9 @@
 .ff-form-wrapper .ff-el-input--label label,
 .ff-form-wrapper label {
   font-weight: 600;
-  font-size: 0.9375rem;
+  font-size: 1.0625rem;
   color: #1a1a1a;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   display: block;
 }
 
@@ -183,8 +234,81 @@
 }
 
 /* =========================================
-   FORM 9 - BOOKING FORMULAR
+   FORM 13 - Kontakt FORMULAR
 ========================================= */
+
+/* Hide form title/subtitle (Form 13) */
+#fluentform_13 .ff-form-title,
+#fluentform_13 .ff-form-subtitle,
+#fluentform_13 .ff-el-header,
+#fluentform_13 .ff-form-header,
+#fluentform_13 .ff-el-form-top {
+  display: none !important;
+}
+
+#fluentform_13.fluentform {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 20px rgba(176, 0, 23, 0.08), 0 1px 4px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(176, 0, 23, 0.06);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: clamp(32px, 4vw, 48px);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+#fluentform_13.fluentform:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(176, 0, 23, 0.12), 0 4px 16px rgba(0, 0, 0, 0.08);
+  border-color: rgba(176, 0, 23, 0.12);
+}
+
+#fluentform_13.fluentform::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #b00017, #8a0012, #b00017);
+  opacity: 0.8;
+  z-index: 1;
+  background-size: 200% 100%;
+}
+
+#fluentform_13 .ff-el-form-control {
+  width: 100%;
+  padding: 16px 18px;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  font-size: 15px;
+  background: #fff;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+}
+
+#fluentform_13 .ff-el-form-control:focus {
+  border-color: #b00017;
+  box-shadow: 0 0 0 4px rgba(176, 0, 23, 0.1);
+  transform: translateY(-1px);
+  background: #fefefe;
+  outline: none;
+}
+
+/* =========================================
+   FORM 9 - Booking FORMULAR
+========================================= */
+
+#fluentform_9 .ff-form-title,
+#fluentform_9 .ff-form-subtitle,
+#fluentform_9 .ff-el-header,
+#fluentform_9 .ff-form-header,
+#fluentform_9 .ff-el-form-top {
+  display: none !important;
+}
 
 #fluentform_9.fluentform {
   max-width: 900px;

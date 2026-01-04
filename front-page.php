@@ -66,11 +66,11 @@ get_header(); ?>
 
                 <!-- Service-kort 2 -->
                 <article class="services-box">
-                    <h3 class="services-title">Reparationer</h3>
+                    <h3 class="services-title">Reparation af bil</h3>
                     <div class="services-content">
                         <p class="services-text">Bremser, udstødning, styretøj, kobling m.m.</p>
                     </div>
-                    <a class="services-cta" href="<?php echo esc_url(home_url('/bilservice/bilreparationer/')); ?>">
+                    <a class="services-cta" href="<?php echo esc_url(home_url('/bilservice/reparation-af-biler/')); ?>">
                         Læs mere
                     </a>
                 </article>
@@ -97,18 +97,7 @@ get_header(); ?>
                     </a>
                 </article>
 
-                <!-- Service-kort 5 -->
-                <article class="services-box">
-                    <h3 class="services-title">Drejearbejde</h3>
-                    <div class="services-content">
-                        <p class="services-text">Bremseskiver, tromler &amp; præcisionsslibning.</p>
-                    </div>
-                    <a class="services-cta" href="<?php echo esc_url(home_url('/bilservice/drejearbejde/')); ?>">
-                        Læs mere
-                    </a>
-                </article>
-
-                <!-- Service-kort 6 -->
+                <!-- Service-kort 6 - Booking CTA -->
                 <article class="services-box">
                     <h3 class="services-title">Book en tid online</h3>
                     <div class="services-content">

@@ -49,12 +49,12 @@ get_header();
             <article class="services-box">
                 <div class="services-icon" aria-hidden="true">🔧</div>
                 <div class="services-content">
-                    <h2 class="services-title">Bilreparationer</h2>
+                    <h2 class="services-title">Reparation af bil</h2>
                     <p class="services-text">
                         Alt fra bremser, styretøj og udstødning til kobling og motorarbejde – kvalitet og garanti.
                     </p>
                 </div>
-                <a class="services-cta" href="<?php echo esc_url(home_url('/bilservice/bilreparationer/')); ?>">
+                <a class="services-cta" href="<?php echo esc_url(home_url('/bilservice/reparation-af-biler/')); ?>">
                     Læs mere
                 </a>
             </article>
@@ -87,21 +87,7 @@ get_header();
                 </a>
             </article>
 
-            <!-- Service 5 -->
-            <article class="services-box">
-                <div class="services-icon" aria-hidden="true">🧵</div>
-                <div class="services-content">
-                    <h2 class="services-title">Drejearbejde</h2>
-                    <p class="services-text">
-                        Præcisionsdrejning og specialløsninger til komponenter og tilpasninger.
-                    </p>
-                </div>
-                <a class="services-cta" href="<?php echo esc_url(home_url('/bilservice/drejearbejde/')); ?>">
-                    Læs mere
-                </a>
-            </article>
-
-            <!-- Service 6 (CTA) -->
+            <!-- Service 6 - Booking CTA -->
             <article class="services-box">
                 <div class="services-icon" aria-hidden="true">📅</div>
                 <div class="services-content">

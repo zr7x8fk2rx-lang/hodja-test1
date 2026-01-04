@@ -33,10 +33,7 @@ get_header(); ?>
                 <div class="kontakt-col kontakt-form">
                     <p class="contact-form-subtitle">Har du spørgsmål eller brug for hjælp? Skriv til os – vi vender hurtigt tilbage.</p>
 
-                    <?php
-                    // Include Fluent Form partial
-                    get_template_part('templates/partials/ff-form');
-                    ?>
+                    <?php echo do_shortcode('[fluentform id="13"]'); ?>
                 </div>
 
                 <!-- Højre kolonne: Kontaktinfo -->

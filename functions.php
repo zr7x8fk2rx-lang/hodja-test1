@@ -107,11 +107,10 @@ add_action('wp_enqueue_scripts', function () {
 
     // 📄 Servicepage CSS (kun på servicepage-sider)
     if (
-        is_page_template('templates/page-bilreparationer.php')
+        is_page_template('templates/page-reparation-af-biler.php')
         || is_page_template('templates/page-daek-faelge.php')
-        || is_page_template('templates/page-drejearbejde.php')
         || is_page_template('templates/page-auto-el-fejlfinding.php')
-        || is_page_template('templates/page-serviceeftersyn.php')
+        || is_page_template('templates/page-serviceeftersyn-vedligeholdelse.php')
         || is_page_template('templates/page-book-vaerkstedstid-online.php')
         || is_page_template('templates/page-tak-for-booking.php')
         || is_page_template('templates/page-om-os.php')
@@ -132,24 +131,24 @@ add_action('wp_enqueue_scripts', function () {
 
     // 🎨 Bilservice side - Services components
     if (is_page_template('templates/page-bilservice.php')) {
-        $services_css = $theme_dir . '/assets/css/components/services.css';
-        if (file_exists($services_css)) {
+        $bilservice_css = $theme_dir . '/assets/css/pages/bilservice.css';
+        if (file_exists($bilservice_css)) {
             wp_enqueue_style(
-                'hodja-services',
-                $theme_uri . '/assets/css/components/services.css',
+                'hodja-bilservice',
+                $theme_uri . '/assets/css/pages/bilservice.css',
                 ['hodja-global'],
-                filemtime($services_css)
+                filemtime($bilservice_css)
             );
         }
     }
 
     // 📇 Kontakt side - kontakt sektion og formularer
     if (is_page_template('templates/page-kontakt.php') || is_page('kontakt')) {
-        $contact_css = $theme_dir . '/assets/css/sections/contact.css';
+        $contact_css = $theme_dir . '/assets/css/pages/kontakt-page.css';
         if (file_exists($contact_css)) {
             wp_enqueue_style(
                 'hodja-contact',
-                $theme_uri . '/assets/css/sections/contact.css',
+                $theme_uri . '/assets/css/pages/kontakt-page.css',
                 ['hodja-global'],
                 filemtime($contact_css)
             );
@@ -210,11 +209,11 @@ add_action('wp_enqueue_scripts', function () {
         }
 
         // Contact section CSS (kontakt-kort og form hero)
-        $contact_css = $theme_dir . '/assets/css/sections/contact.css';
+        $contact_css = $theme_dir . '/assets/css/pages/kontakt-page.css';
         if (file_exists($contact_css)) {
             wp_enqueue_style(
                 'hodja-contact',
-                $theme_uri . '/assets/css/sections/contact.css',
+                $theme_uri . '/assets/css/pages/kontakt-page.css',
                 ['hodja-global'],
                 filemtime($contact_css)
             );

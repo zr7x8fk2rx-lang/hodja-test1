@@ -25,7 +25,7 @@ style.css            – Tema metadata (påkrævet af WordPress)
 
 │
 ├── sections/
-│ └── contact.css – Kontaktsektion (både forside og kontakt side)
+│ └── kontakt-page.css – Kontaktsektion (kontakt-page)
 │
 ├── pages/
 │ ├── 404.css – 404 fejlside styling
@@ -180,17 +180,16 @@ npm run prefix
 
 ```
 page-auto-el-fejlfinding.php      – Auto el & fejlfinding
-page-bilreparationer.php          – Bilreparationer
+page-reparation-af-biler.php      – Reparation af biler
 page-bilservice.php               – Bilservice oversigt
 page-book-vaerkstedstid-online.php – Booking
 page-cookiepolitik.php            – Cookie politik
 page-daek-faelge.php              – Dæk & fælge
-page-drejearbejde.php             – Drejearbejde
 page-faq.php                      – FAQ
 page-kontakt.php                  – Kontakt side
 page-om-os.php                    – Om os
 page-privatlivspolitik.php        – Privatlivspolitik
-page-serviceeftersyn.php          – Serviceeftersyn
+page-serviceeftersyn-vedligeholdelse.php          – Serviceeftersyn
 page-tak-for-booking.php          – Tak for booking
 ```
 

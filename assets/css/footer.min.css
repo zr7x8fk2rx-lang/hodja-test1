@@ -55,8 +55,8 @@
     drop-shadow(0 2px 8px rgba(255, 255, 255, 0.1));
 }
 
-.hodja-footer__logo p {
-  color: #b8b8b8;
+.hodja-footer__tagline {
+  color: #fff;
   line-height: 1.6;
   font-size: 15px;
   max-width: 320px;
@@ -92,14 +92,14 @@
 
 .hodja-footer__col li {
   margin-bottom: 12px;
-  color: #b8b8b8;
+  color: #fff;
   line-height: 1.6;
   display: flex;
   align-items: flex-start;
 }
 
 .hodja-footer__col a {
-  color: #e5e5e5;
+  color: #fff;
   text-decoration: none;
   transition: color 0.3s ease;
   position: relative;
@@ -109,16 +109,7 @@
   color: var(--hodja-red);
 }
 
-/* Brand accents: Kontakt + Åbningstider */
-.hodja-footer__container > .hodja-footer__col:nth-of-type(2) li {
-  color: var(--hodja-red);
-}
-.hodja-footer__container > .hodja-footer__col:nth-of-type(3) a {
-  color: var(--hodja-red);
-}
-.hodja-footer__container > .hodja-footer__col:nth-of-type(3) a:hover {
-  color: #fff;
-}
+/* Brand accents removed - all items consistent */
 
 /* Bottom bar */
 .hodja-footer__bottom {
@@ -131,7 +122,7 @@
   justify-content: space-between;
   gap: 16px;
   font-size: 14px;
-  color: #888;
+  color: #fff;
 }
 
 .hodja-footer__bottom p {
@@ -144,7 +135,7 @@
 }
 
 .hodja-footer__social a {
-  color: #e5e5e5;
+  color: #fff;
   font-size: 20px;
   width: 40px;
   height: 40px;
