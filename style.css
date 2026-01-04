@@ -1,7 +1,49 @@
 /*
-Theme Name: Hodja Test
-Author: Hodja Auto
-Description: Minimal test tema
-Version: 1.0
+Theme Name: CPHT1 Blank
+Theme URI: https://cpht1.dk
+Description: Blank tema til CPHT1
+Version: 1.0.0
+Author: Martin Hamid
+Author URI: https://cpht1.dk
+License: GPL v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: cpht1-blank
+Domain Path: /languages
 */
-/* test hodja-test1 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background: #f5f5f5;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main {
+  min-height: 60vh;
+  padding: 40px 0;
+}
+
+footer {
+  background: #333;
+  color: white;
+  padding: 40px 0 20px;
+  margin-top: 60px;
+}

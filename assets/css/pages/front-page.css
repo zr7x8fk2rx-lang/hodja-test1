@@ -22,16 +22,16 @@ section {
 
 /* Alternating section backgrounds for scannability */
 .usp-section {
-  background: #f7f7f7;
+  background: #0066cc;
 }
 .services-section {
-  background: #ffffff;
+  background: #003399;
 }
 .booking-cta {
-  background: #f7f7f7;
+  background: #0066cc;
 }
 .contact-form-section {
-  background: #ffffff;
+  background: #003399;
 }
 
 /* Section transitions - fade in on scroll */

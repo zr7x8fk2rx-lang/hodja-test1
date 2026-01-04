@@ -1,50 +1,32 @@
 <?php
-
 /**
- * Standard Page Template
- * Bruges som fallback for alle sider uden egen skabelon.
+ * Page template
  */
-defined('ABSPATH') || exit;
-
 get_header();
 ?>
 
-<main id="main" class="site-main" role="main">
-
+<main id="main" class="container">
     <?php
-    // Start WordPress loop
-    if (have_posts()) :
-        while (have_posts()) : the_post(); ?>
+    while (have_posts()) : the_post();
+        ?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <header class="entry-header">
+                <h1 class="entry-title"><?php the_title(); ?></h1>
+            </header>
 
-            <section class="servicepage-hero" role="region" aria-label="Side-hero">
-                <div class="servicepage-herocontainer">
-                    <h1 class="servicepage-herotitle"><?php the_title(); ?></h1>
-                    <?php if (has_excerpt()) : ?>
-                        <p class="servicepage-herotext"><?php echo esc_html(get_the_excerpt()); ?></p>
-                    <?php endif; ?>
+            <?php if (has_post_thumbnail()) : ?>
+                <div class="entry-thumbnail">
+                    <?php the_post_thumbnail('full'); ?>
                 </div>
-            </section>
+            <?php endif; ?>
 
-            <section class="servicepage-section">
-                <div class="servicepage-container">
-                    <h1 class="servicepage-heading"><?php the_title(); ?></h1>
-                    <div class="servicepage-paragraph">
-                        <?php the_content(); ?>
-                    </div>
-                </div>
-            </section>
-
-        <?php endwhile;
-    else : ?>
-        <section class="servicepage-section">
-            <div class="servicepage-container">
-                <h1 class="servicepage-heading">Ingen indhold fundet</h1>
-                <p class="servicepage-paragraph">Siden findes, men der er intet indhold endnu.</p>
+            <div class="entry-content">
+                <?php the_content(); ?>
             </div>
-        </section>
-    <?php endif; ?>
-
+        </article>
+        <?php
+    endwhile;
+    ?>
 </main>
 
-<?php
-get_footer();
+<?php get_footer();
